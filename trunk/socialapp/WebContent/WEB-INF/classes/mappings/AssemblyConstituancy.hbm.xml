@@ -5,18 +5,18 @@
 
 <hibernate-mapping>
 	<class name="org.socialapp.domain.sub.AssemblyConstituancy" table="spm_assembly">
-		<id column="ASMC_ID" name="id" type="java.lang.Long">
+		<id column="asmc_id" name="id" type="java.lang.Long">
 			<generator class="assigned" />
 		</id>
 
-		<property column="ASMC_GUID" name="guid" type="java.lang.String" />
-		<property column="ASMC_CONSTITUANCYID" name="constituancyId" type="java.lang.Long" />
-		<property column="ASMC_CONSTITUANCYNAME" name="constituancyName" type="java.lang.String" />
-		<property column="ASMC_CREATED_DATE" name="createdOn" type="java.util.Date" />
-		<property column="ASMC_CREATED_BY" name="createdBy" type="java.lang.Long" />
-		<property column="ASMC_MODIFIED_DATE" name="modifiedOn" type="java.util.Date" />
-		<property column="ASMC_MODIFIED_BY" name="modifiedBy" type="java.lang.Long" />
-		<property column="ASMC_ACTIVE" name="active" type="java.lang.Long" />
+		<property column="asmc_guid" name="guid" type="java.lang.String" />
+		<property column="asmc_constituancyid" name="constituancyId" type="java.lang.Long" />
+		<property column="asmc_constituancyname" name="constituancyName" type="java.lang.String" />
+		<property column="asmc_created_date" name="createdOn" type="java.util.Date" />
+		<property column="asmc_created_by" name="createdBy" type="java.lang.Long" />
+		<property column="asmc_modified_date" name="modifiedOn" type="java.util.Date" />
+		<property column="asmc_modified_by" name="modifiedBy" type="java.lang.Long" />
+		<property column="asmc_active" name="active" type="java.lang.Long" />
 
 	</class>
-</hibernate-mapping><?xml version="1.0" encoding="UTF-8"?>
+</hibernate-mapping>
