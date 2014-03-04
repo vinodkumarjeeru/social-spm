@@ -1,14 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC
 "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
 <hibernate-mapping>
-    <class name="" table="" discriminator-value="0">
-        <id column="" name="" type="">
-            <generator class="native" />
-        </id>
-        
-        <property column="" name="guid" type="java.lang.String" />
-        
-    </class>
+	<class name="org.socialapp.domain.sub.District" table="spm_district">
+		<id column="DIS_ID" name="id" type="java.lang.Long">
+			<generator class="assigned" />
+		</id>
+
+		<property column="DIS_GUID" name="guid" type="java.lang.String" />
+		<property column="DIS_DISTRICTID" name="districtId" type="java.lang.Long" />
+		<property column="DIS_NAME" name="districtName" type="java.lang.String" />
+		<property column="DIS_CAPITAL" name="districtCapital" type="java.lang.String" />
+		<property column="DIS_STATE" name="state" type="java.lang.String" />
+		<property column="DIS_CREATED_DATE" name="createdOn" type="java.util.Date" />
+		<property column="DIS_CREATED_BY" name="createdBy" type="java.lang.Long" />
+		<property column="DIS_MODIFIED_DATE" name="modifiedOn" type="java.util.Date" />
+		<property column="DIS_MODIFIED_BY" name="modifiedBy" type="java.lang.Long" />
+		<property column="DIS_ACTIVE" name="active" type="java.lang.Long" />
+		<property column="DIS_MAP" name="districtMap" type="java.lang.Byte" />
+
+	</class>
 </hibernate-mapping>
