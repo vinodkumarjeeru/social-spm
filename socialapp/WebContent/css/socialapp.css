@@ -1,0 +1,20 @@
+#LogIn {
+	font-weight: bolder;
+}
+
+.container {
+	margin: auto;
+}
+
+body {
+	padding: 60px;
+}
+
+#Login_Heading {
+	font-weight: bolder;
+	font-stretch: expanded;
+}
+
+#CloseModal_CSS {
+	color: #fff;
+}
