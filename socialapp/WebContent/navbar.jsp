@@ -77,7 +77,7 @@
 					</div>
 
 					<div class="form-group">
-						<label><a href="#"><img src="images/active_404.png"></a></label>
+						<label><a href="${pageContext.request.contextPath}/login.htm"><img src="images/active_404.png"></a></label>
 					</div>
 
 
