@@ -6,20 +6,20 @@
 <hibernate-mapping>
 	<class name="org.socialapp.domain.sub.ParlimentConstituancy"
 		table="spm_parliment">
-		<id column="PMC_ID" name="id" type="java.lang.Long">
+		<id column="pmc_id" name="id" type="java.lang.Long">
 			<generator class="assigned" />
 		</id>
 
-		<property column="PMC_GUID" name="guid" type="java.lang.String" />
-		<property column="PMC_CONSTITUANCYID" name="parlimentconstituancyId"
+		<property column="pmc_guid" name="guid" type="java.lang.String" />
+		<property column="pmc_constituancyid" name="parlimentconstituancyId"
 			type="java.lang.Long" />
-		<property column="PMC_CONSTITUANCYNAME" name="parlimentconstituancyName"
+		<property column="pmc_constituancyname" name="parlimentconstituancyName"
 			type="java.lang.String" />
-		<property column="PMC_CREATED_DATE" name="createdOn" type="java.util.Date" />
-		<property column="PMC_CREATED_BY" name="createdBy" type="java.lang.Long" />
-		<property column="PMC_MODIFIED_DATE" name="modifiedOn" type="java.util.Date" />
-		<property column="PMC_MODIFIED_BY" name="modifiedBy" type="java.lang.Long" />
-		<property column="PMC_ACTIVE" name="active" type="java.lang.Long" />
+		<property column="pmc_created_date" name="createdOn" type="java.util.Date" />
+		<property column="pmc_created_by" name="createdBy" type="java.lang.Long" />
+		<property column="pmc_modified_date" name="modifiedOn" type="java.util.Date" />
+		<property column="pmc_modified_by" name="modifiedBy" type="java.lang.Long" />
+		<property column="pmc_active" name="active" type="java.lang.Long" />
 
 	</class>
-</hibernate-mapping><?xml version="1.0" encoding="UTF-8"?>
+</hibernate-mapping>
