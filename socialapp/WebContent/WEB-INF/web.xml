@@ -21,19 +21,19 @@
 		<servlet-class>org.socialapp.web.controller.FBLoginController</servlet-class>
 		<init-param>
 			<param-name>app.config.oauth.facebook.apikey</param-name>
-			<param-value>258516234286758</param-value>
+			<param-value>270090566491667</param-value>
 
 		</init-param>
 
 		<init-param>
 			<param-name>app.config.oauth.facebook.apisecret</param-name>
-			<param-value>2d3ac588f19cba0d0e6543b0c94244fb</param-value>
+			<param-value>222d618864f2297e218e9023ea8f1089</param-value>
 
 		</init-param>
 
 		<init-param>
 			<param-name>app.config.oauth.facebook.callback</param-name>
-			<param-value>http://localhost:8080/socialapp/FBLoginController</param-value>
+			<param-value>http://localhost:8080/socialapp/home</param-value>
 
 		</init-param>
 
@@ -41,7 +41,18 @@
 
 	<servlet-mapping>
 		<servlet-name>FBLoginController</servlet-name>
-		<url-pattern>/FBLoginController</url-pattern>
+		<url-pattern>/login.htm</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>HomeController</servlet-name>
+		<servlet-class>org.socialapp.web.controller.HomeController</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>HomeController</servlet-name>
+		<url-pattern>/home</url-pattern>
 	</servlet-mapping>
 
 
