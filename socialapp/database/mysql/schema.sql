@@ -2,7 +2,7 @@
 create table spm_district (
    dis_id 				bigint(10) not null auto_increment,   
    dis_guid 			varchar(255) not null,
-   dis_districtid 		bigint(10) not null
+   dis_districtid 		bigint(10) not null,
    dis_name 		    varchar(255),
    dis_capital 		    varchar(255),
    dis_state 		    varchar(255),   
