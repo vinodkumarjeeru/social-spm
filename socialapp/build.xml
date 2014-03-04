@@ -17,6 +17,7 @@ jar     -- Builds jar files
 war     -- Builds social app war files
 deploy  -- Deploys the application to tomcat
 createDB -- Creates the database
+loadSchema -- Loads the Database
     </echo>
 	</target>
 
