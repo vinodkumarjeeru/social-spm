@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.socialapp.domain.sub.AssemblyConstituancy" table="spm_assembly">
+		<id column="ASMC_ID" name="id" type="java.lang.Long">
+			<generator class="assigned" />
+		</id>
+
+		<property column="ASMC_GUID" name="guid" type="java.lang.String" />
+		<property column="ASMC_CONSTITUANCYID" name="constituancyId" type="java.lang.Long" />
+		<property column="ASMC_CONSTITUANCYNAME" name="constituancyName" type="java.lang.String" />
+		<property column="ASMC_CREATED_DATE" name="createdOn" type="java.util.Date" />
+		<property column="ASMC_CREATED_BY" name="createdBy" type="java.lang.Long" />
+		<property column="ASMC_MODIFIED_DATE" name="modifiedOn" type="java.util.Date" />
+		<property column="ASMC_MODIFIED_BY" name="modifiedBy" type="java.lang.Long" />
+		<property column="ASMC_ACTIVE" name="active" type="java.lang.Long" />
+
+	</class>
+</hibernate-mapping><?xml version="1.0" encoding="UTF-8"?>
