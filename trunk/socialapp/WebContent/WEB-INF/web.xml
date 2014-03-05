@@ -34,6 +34,18 @@
 	<servlet>
 		<servlet-name>HomeController</servlet-name>
 		<servlet-class>org.socialapp.web.controller.HomeController</servlet-class>
+		<init-param>
+			<param-name>app.config.oauth.facebook.apikey</param-name>
+			<param-value>270090566491667</param-value>
+		</init-param>
+		<init-param>
+			<param-name>app.config.oauth.facebook.apisecret</param-name>
+			<param-value>222d618864f2297e218e9023ea8f1089</param-value>
+		</init-param>
+		<init-param>
+			<param-name>app.config.oauth.facebook.callback</param-name>
+			<param-value>http://localhost:8080/socialapp/home</param-value>
+		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>HomeController</servlet-name>
