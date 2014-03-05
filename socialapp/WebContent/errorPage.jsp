@@ -11,33 +11,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
-#content {
-	position: relative;
-	top: 65px;
-	height: 300px;
-}
 
-#errimg {
-	position: relative;
-	top: 30px;
-	height: 396px;
-	left-align: 40px;
-	width: 20px;
-}
 </style>
 </head>
 
 
 <%@include file="navbar.jsp"%>
-<body>
+<body class="">
 
 	<div class="container">
-		<div class="jumbotron" id="content">
-			<div id="errimg" class="img-rounded">
-
-				<a href="#"><img src="images/404.jpg"></a>
-			</div>
-		</div>
+		
+			
+			<a href="#"><img src="images/404.png" class="img-responsive"/></a>
+		
 
 	</div>
 
