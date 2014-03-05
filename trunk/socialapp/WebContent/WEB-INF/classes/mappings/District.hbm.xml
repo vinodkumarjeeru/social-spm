@@ -14,12 +14,12 @@
 		<property column="dis_name" name="districtName" type="java.lang.String" />
 		<property column="dis_capital" name="districtCapital" type="java.lang.String" />
 		<property column="dis_state" name="state" type="java.lang.String" />
-		<property column="dis_created_date" name="createdOn" type="java.util.Date" />
+		<property column="dis_created_on" name="createdOn" type="java.util.Date" />
 		<property column="dis_created_by" name="createdBy" type="java.lang.Long" />
-		<property column="dis_modified_date" name="modifiedOn" type="java.util.Date" />
+		<property column="dis_modified_on" name="modifiedOn" type="java.util.Date" />
 		<property column="dis_modified_by" name="modifiedBy" type="java.lang.Long" />
 		<property column="dis_active" name="active" type="java.lang.Long" />
-		<!-- <property column="dis_map" name="districtMap" type="binary" /> -->
+		<property column="dis_map" name="districtMap" type="binary" />
 
 	</class>
 </hibernate-mapping>
