@@ -6,7 +6,7 @@
 <hibernate-mapping>
 	<class name="org.socialapp.domain.sub.District" table="spm_district">
 		<id column="dis_id" name="id" type="java.lang.Long">
-			<generator class="assigned" />
+			<generator class="native" />
 		</id>
 
 		<property column="dis_guid" name="guid" type="java.lang.String" />
@@ -19,7 +19,7 @@
 		<property column="dis_modified_date" name="modifiedOn" type="java.util.Date" />
 		<property column="dis_modified_by" name="modifiedBy" type="java.lang.Long" />
 		<property column="dis_active" name="active" type="java.lang.Long" />
-		<property column="dis_map" name="districtMap" type="binary" />
+		<!-- <property column="dis_map" name="districtMap" type="binary" /> -->
 
 	</class>
 </hibernate-mapping>
