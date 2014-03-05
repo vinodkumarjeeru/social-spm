@@ -3,6 +3,8 @@
  */
 package org.socialapp.service;
 
+import java.util.List;
+
 import org.socialapp.domain.sub.District;
 
 /**
@@ -11,6 +13,10 @@ import org.socialapp.domain.sub.District;
  */
 public interface DistrictService {
 
-	void create(District district);
+	void createOrUpdate(District district);
+	
+	List<District> getAll();
+	
+	District findBy(String districtName);
 	
 }
