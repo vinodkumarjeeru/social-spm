@@ -14,8 +14,8 @@
 
 
 		<mapping resource="mappings/District.hbm.xml" />
-		<!-- <mapping resource="mappings/AssemblyConstituancy.hbm.xml" />
-		<mapping resource="mappings/ParlimentConstituancy.hbm.xml" /> -->
+		<!-- <mapping resource="mappings/AssemblyConstituancy.hbm.xml" /> <mapping 
+			resource="mappings/ParlimentConstituancy.hbm.xml" /> -->
 
 
 	</session-factory>
