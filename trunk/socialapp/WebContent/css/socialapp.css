@@ -1,20 +1,27 @@
 #LogIn {
-	font-weight: bolder;
+    font-weight: bolder;
+
+}
+
+#LogIn:hover{
+    
+    text-decoration: none;
+    
 }
 
 .container {
-	margin: auto;
+    margin: auto;
 }
 
 body {
-	padding: 60px;
+    padding: 60px;
 }
 
 #Login_Heading {
-	font-weight: bolder;
-	font-stretch: expanded;
+    font-weight: bolder;
+    font-stretch: expanded;
 }
 
 #CloseModal_CSS {
-	color: #fff;
+    color: #fff;
 }
