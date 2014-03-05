@@ -10,15 +10,15 @@
 
 	<target name="usage">
 		<echo>
-Usage: ant [clean|compile|jar|war|deploy]
-clean   -- Deletes the compiled classes and jar files
-compile -- Compile all project files
-jar     -- Builds jar files
-war     -- Builds social app war files
-deploy  -- Deploys the application to tomcat
-createDB -- Creates the database
-loadSchema -- Loads the Database
-    </echo>
+			Usage: ant [clean|compile|jar|war|deploy]
+			clean -- Deletes the compiled classes and jar files
+			compile -- Compile all project files
+			jar -- Builds jar files
+			war -- Builds social app war files
+			deploy -- Deploys the application to tomcat
+			createDB -- Creates the database
+			loadSchema -- Loads the Database
+		</echo>
 	</target>
 
 	<target name="clean" description="deletes bytecode for clean build">
@@ -27,12 +27,15 @@ loadSchema -- Loads the Database
 
 	<target name="compile" description="compiles project files to dist/classes">
 		<mkdir dir="${javac.dest}" />
-		<javac srcdir="${java.source.dir}" destdir="${javac.dest}" includes="**/*.java" classpathref="app.classpath" includeantruntime="false" debug="${debug}" />
+		<javac srcdir="${java.source.dir}" destdir="${javac.dest}"
+			includes="**/*.java" classpathref="app.classpath" includeantruntime="false"
+			debug="${debug}" />
 	</target>
 
 	<target name="jar" depends="compile" description="jars the project files">
 		<mkdir dir="${jar.dest}" />
-		<jar jarfile="${jar.dest}/${app.name}.jar" basedir="${javac.dest}" includes="**/*.class" />
+		<jar jarfile="${jar.dest}/${app.name}.jar" basedir="${javac.dest}"
+			includes="**/*.class" />
 	</target>
 
 
@@ -49,7 +52,8 @@ loadSchema -- Loads the Database
 	</target>
 
 	<!-- Target to clean the Tomcat -->
-	<target name="tomcat-clean" description="deletes the expanded directory structure in tomcat
+	<target name="tomcat-clean"
+		description="deletes the expanded directory structure in tomcat
                      webapps and work\Standalone\localhost folders">
 		<delete dir="${tomcat.webapps}/${app.name}" />
 		<delete dir="${tomcat.work}/${app.name}" />
@@ -62,18 +66,22 @@ loadSchema -- Loads the Database
 	</target>
 
 	<target name="createDB">
-		<sql userid="${sql.user}" password="${sql.password}" url="${sql.url}" driver="${db.driver}">
+		<sql userid="${sql.user}" password="${sql.password}" url="${sql.url}"
+			driver="${db.driver}">
 			<classpath>
 				<path refid="app.classpath" />
-			</classpath>			 
+			</classpath>
 			DROP DATABASE IF EXISTS ${db.name};
 			CREATE DATABASE ${db.name};
-			GRANT ALL PRIVILEGES ON ${db.name}.* TO '${db.username}'@'${db.host}' IDENTIFIED BY '${db.password}' WITH GRANT OPTION;
+			GRANT
+			ALL PRIVILEGES ON ${db.name}.* TO '${db.username}'@'${db.host}'
+			IDENTIFIED BY '${db.password}' WITH GRANT OPTION;
 		</sql>
 	</target>
 
 	<target name="loadSchema">
-		<sql userid="${sql.user}" password="${sql.password}" url="${db.url}" driver="${db.driver}">
+		<sql userid="${sql.user}" password="${sql.password}" url="${db.url}"
+			driver="${db.driver}">
 			<classpath>
 				<path refid="app.classpath" />
 			</classpath>
