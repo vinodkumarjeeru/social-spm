@@ -48,6 +48,7 @@ public abstract class GenericDAOImpl<T, ID extends Serializable> implements
 
 	@SuppressWarnings("unchecked")
 	public T findOne(Query query) {
+
 		T t;
 		t = (T) query.uniqueResult();
 		return t;
@@ -63,6 +64,7 @@ public abstract class GenericDAOImpl<T, ID extends Serializable> implements
 
 	@SuppressWarnings("rawtypes")
 	public List getAll(Class clazz) {
+
 		Session session = this.getSession();
 		List T = null;
 		Query query = session.createQuery("from " + clazz.getName());
