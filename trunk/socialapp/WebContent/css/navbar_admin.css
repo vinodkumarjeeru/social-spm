@@ -1,0 +1,16 @@
+/* 
+    Document   : navbar_admin
+    Created on : 5 Mar, 2014, 12:43:44 PM
+    Author     : Admin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+#LogOut:hover{
+    
+    text-decoration: none;
+}
