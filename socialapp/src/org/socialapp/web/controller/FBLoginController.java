@@ -6,7 +6,6 @@ package org.socialapp.web.controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,12 +18,13 @@ import org.scribe.model.Token;
 import org.scribe.model.Verb;
 import org.scribe.model.Verifier;
 import org.scribe.oauth.OAuthService;
+import org.socialapp.web.utils.RootServlet;
 
 /**
  * @author sudarsan
  * 
  */
-public class FBLoginController extends HttpServlet {
+public class FBLoginController extends RootServlet {
 
 	/**
 	 * 
@@ -39,7 +39,7 @@ public class FBLoginController extends HttpServlet {
 	private Token accessToken = null;
 	private Verifier verifier = null;
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
+	public void socialService(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String apiKey = this.getServletConfig()
