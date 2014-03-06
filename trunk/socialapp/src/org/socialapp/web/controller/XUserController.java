@@ -22,7 +22,7 @@ import org.socialapp.web.utils.RootServlet;
 @WebServlet("/XUserController")
 public class XUserController extends RootServlet {
 	private static final long serialVersionUID = 1L;
-	private static final Logger LOG = Logger.getLogger(FBLoginController.class);
+	private static final Logger LOG = Logger.getLogger(XUserController.class);
 
 	protected void socialService(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
