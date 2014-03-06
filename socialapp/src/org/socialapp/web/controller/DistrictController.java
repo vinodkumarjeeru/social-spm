@@ -57,7 +57,7 @@ public class DistrictController extends RootServlet {
 			district.setActive(1L);
 			DistrictService service = new DistrictServiceImpl();
 			service.createOrUpdate(district);
-			LOG.debug(district);
+			
 
 		} catch (FileUploadException e) {
 			LOG.debug(e);
