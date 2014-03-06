@@ -81,8 +81,8 @@
 
                     <div class="form-group">
                         <label><a href="${pageContext.request.contextPath}/login.htm"><img src="images/active_404.png"></a></label>
-                        <label class="text-center"> <label class="text-center"> (  or  ) </label> <label class="text-info">New User ?? </label> -> </label>
-                        <label><a href="register.jsp" class="btn btn-primary">Register</a></label>
+                        <label class="text-center"> <label class="text-center"> (  or  ) </label>  </label>
+                        <label style="float: right"><a href="register.jsp" class="btn btn-lg btn-primary">New User -- Register</a></label>
                     </div>
 
 
