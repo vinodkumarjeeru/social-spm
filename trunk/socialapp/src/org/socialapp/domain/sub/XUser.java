@@ -14,9 +14,8 @@ import org.socialapp.domain.Domain;
  */
 public class XUser extends Domain {
 
-	private Long fbId;
 	private String firstName;
-	private String lastName;	
+	private String lastName;
 	private String email;
 	private String password;
 	private String district;
@@ -30,28 +29,15 @@ public class XUser extends Domain {
 	}
 
 	/**
-	 * @return the fbId
-	 */
-	public Long getFbId() {
-		return fbId;
-	}
-
-	/**
-	 * @param fbId the fbId to set
-	 */
-	public void setFbId(Long fbId) {
-		this.fbId = fbId;
-	}
-
-	/**
-	 * @return the firstName
+	 * @return
 	 */
 	public String getFirstName() {
 		return firstName;
 	}
 
 	/**
-	 * @param firstName the firstName to set
+	 * @param firstName
+	 *            the firstName to set
 	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -65,7 +51,8 @@ public class XUser extends Domain {
 	}
 
 	/**
-	 * @param lastName the lastName to set
+	 * @param lastName
+	 *            the lastName to set
 	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
@@ -79,7 +66,8 @@ public class XUser extends Domain {
 	}
 
 	/**
-	 * @param email the email to set
+	 * @param email
+	 *            the email to set
 	 */
 	public void setEmail(String email) {
 		this.email = email;
@@ -93,7 +81,8 @@ public class XUser extends Domain {
 	}
 
 	/**
-	 * @param password the password to set
+	 * @param password
+	 *            the password to set
 	 */
 	public void setPassword(String password) {
 		this.password = password;
@@ -107,7 +96,8 @@ public class XUser extends Domain {
 	}
 
 	/**
-	 * @param district the district to set
+	 * @param district
+	 *            the district to set
 	 */
 	public void setDistrict(String district) {
 		this.district = district;
@@ -121,7 +111,8 @@ public class XUser extends Domain {
 	}
 
 	/**
-	 * @param securityQuestion the securityQuestion to set
+	 * @param securityQuestion
+	 *            the securityQuestion to set
 	 */
 	public void setSecurityQuestion(String securityQuestion) {
 		this.securityQuestion = securityQuestion;
@@ -135,7 +126,8 @@ public class XUser extends Domain {
 	}
 
 	/**
-	 * @param answer the answer to set
+	 * @param answer
+	 *            the answer to set
 	 */
 	public void setAnswer(String answer) {
 		this.answer = answer;
@@ -149,7 +141,8 @@ public class XUser extends Domain {
 	}
 
 	/**
-	 * @param mobile the mobile to set
+	 * @param mobile
+	 *            the mobile to set
 	 */
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
@@ -163,25 +156,43 @@ public class XUser extends Domain {
 	}
 
 	/**
-	 * @param profilePic the profilePic to set
+	 * @param profilePic
+	 *            the profilePic to set
 	 */
 	public void setProfilePic(byte[] profilePic) {
 		this.profilePic = profilePic;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
-		return "XUser [fbId=" + fbId + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", email=" + email + ", password="
-				+ password + ", district=" + district + ", securityQuestion="
-				+ securityQuestion + ", answer=" + answer + ", mobile="
-				+ mobile + ", profilePic=" + Arrays.toString(profilePic) + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("XUser [firstName=");
+		builder.append(firstName);
+		builder.append(", lastName=");
+		builder.append(lastName);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", password=");
+		builder.append(password);
+		builder.append(", district=");
+		builder.append(district);
+		builder.append(", securityQuestion=");
+		builder.append(securityQuestion);
+		builder.append(", answer=");
+		builder.append(answer);
+		builder.append(", mobile=");
+		builder.append(mobile);
+		builder.append(", profilePic=");
+		builder.append(profilePic.length);
+		builder.append("]");
+		return builder.toString();
 	}
 
-	
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
 	
 
 }
