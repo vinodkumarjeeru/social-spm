@@ -63,26 +63,28 @@
                     <div class="form-group">
 
                         <label for="UserName">E-Mail</label> <input type="text"
-                                                                    class="form-control">
+                                                                    class="form-control" placeholder="E-Mail">
                     </div>
 
                     <div class="form-group">
                         <label for="Password">Password</label> <input type="password"
-                                                                      class="form-control">
+                                                                      class="form-control" placeholder="Password">
                     </div>
 
                     <div class="form-group">
                         <a href="#" class="btn btn-sm btn-primary">Sign In</a> 
                         <a href="#" class="btn btn-sm btn-danger">Clear</a>
                         <div style="float: right">
-                            <a href="#" class="btn btn-sm btn-warning" >Forgot Password</a>
+                            <a href="#" class="" >Forgot Password</a>
                         </div>
                     </div>
-
+                        
+                    <br/><br/>
+                    
                     <div class="form-group">
                         <label><a href="${pageContext.request.contextPath}/login.htm"><img src="images/active_404.png"></a></label>
-                        <label class="text-center"> <label class="text-center"> (  or  ) </label>  </label>
-                        <label style="float: right"><a href="register.jsp" class="btn btn-lg btn-primary">New User -- Register</a></label>
+                        
+                        <label style="float: right"><a href="register.jsp" class="btn btn-lg btn-primary">Register With InfoHub</a></label>
                     </div>
 
 
