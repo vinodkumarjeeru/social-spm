@@ -43,3 +43,25 @@ create table spm_parliment(
     pmc_active 			  bigint(10) not null,
     PRIMARY KEY (pmc_id)
 )ENGINE = InnoDB DEFAULT CHARSET=UTF8 COLLATE=UTF8_UNICODE_CI;
+
+
+create table spm_xuser (
+   xsr_id 				bigint(10) not null auto_increment,   
+   xsr_guid 			varchar(255) not null,
+   xsr_email			varchar(255),
+   xsr_firstname 		varchar(255) ,
+   xsr_lastname 		    varchar(255),
+   xsr_password 		    varchar(255),
+   xsr_district 		    varchar(255), 
+   xsr_mobile 		    varchar(255),
+   xsr_question 		    varchar(255),
+   xsr_answer 		    varchar(255), 
+   xsr_profilepic 				mediumblob,
+   xsr_created_on 	    datetime not null,
+   xsr_created_by 		bigint(10),
+   xsr_modified_on 	    datetime not null,
+   xsr_modified_by 		bigint(10),
+   xsr_active 			bigint(10) not null,  
+   PRIMARY KEY (xsr_id)
+) ENGINE = InnoDB DEFAULT CHARSET=UTF8 COLLATE=UTF8_UNICODE_CI;
+
