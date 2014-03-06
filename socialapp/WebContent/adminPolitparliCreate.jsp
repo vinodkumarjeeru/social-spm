@@ -29,31 +29,35 @@
             <div class="panel panel-group panel-primary">
                 <div class="panel-heading bg-primary">
                     <div class="panel-title text-center">
-                        <b>Create District Details </b>
+                        <b>Create District </b>
                     </div>
 
                 </div>
                 <div class="panel-body">
-                    <form class="form-group">
+                    <form class="form-group"> 
                         <div class="form-group">
-                            <label class="text-left">District Name</label>
+                            <label >District Name</label>
                             <input type="text" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label class="text-left">District Headquarters </label>
+                            <label >District Headquarters </label>
                             <input type="text" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label class="text-left">State </label>
+                            <label>State </label>
                             <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label >District Map .. </label>
+                            <input type="file">
                         </div>
 
+
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-success" value="Submit">
+                            <button type="button" class="btn btn-danger">Reset</button>
+                        </div>
                     </form>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-success">Submit</button>
-                        <button type="button" class="btn btn-danger">Reset</button>
-                    </div>
-
                 </div>
             </div>
 
