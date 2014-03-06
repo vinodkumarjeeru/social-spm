@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.socialapp.domain.sub.XUser" table="spm_xuser">
+		<id column="xsr_id" name="id" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+
+		<property column="xsr_guid" name="guid" type="java.lang.String" />
+		<property column="xsr_email" name="email" type="java.lang.String" />
+		<property column="xsr_password" name="password" type="java.lang.String" />
+		<property column="xsr_firstname" name="firstName" type="java.lang.String" />
+		<property column="xsr_lastname" name="lastName" type="java.lang.String" />
+		<property column="xsr_question" name="securityQuestion" type="java.lang.String" />
+		<property column="xsr_answer" name="answer" type="java.lang.String" />
+		<property column="xsr_mobile" name="mobile" type="java.lang.String" />
+		<property column="xsr_district" name="district" type="java.lang.String" />
+		<property column="xsr_profilepic" name="profilePic" type="binary" />
+		<property column="xsr_created_on" name="createdOn" type="java.util.Date" />
+		<property column="xsr_created_by" name="createdBy" type="java.lang.Long" />
+		<property column="xsr_modified_on" name="modifiedOn" type="java.util.Date" />
+		<property column="xsr_modified_by" name="modifiedBy" type="java.lang.Long" />
+		<property column="xsr_active" name="active" type="java.lang.Long" />
+
+
+	</class>
+</hibernate-mapping>
