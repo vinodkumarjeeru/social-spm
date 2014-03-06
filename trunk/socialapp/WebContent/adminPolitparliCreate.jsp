@@ -35,20 +35,24 @@
                 </div>
                 <div class="panel-body">
                     <form class="form-group">
-                        <br><br>
-                        <label class="text-left">District Name</label>
-                        <input type="text" class="form-control">
-                        <br><br>
-                        <label class="text-left">District Headquarters </label>
-                        <input type="text" class="form-control">
-                        <br><br>
-                        <label class="text-left">State </label>
-                        <input type="text" class="form-control">
-                        <br><br>
-                        <button type="button" class="btn btn-success">Submit</button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button type="button" class="btn btn-danger">Reset</button>
+                        <div class="form-group">
+                            <label class="text-left">District Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-left">District Headquarters </label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-left">State </label>
+                            <input type="text" class="form-control">
+                        </div>
+
                     </form>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-success">Submit</button>
+                        <button type="button" class="btn btn-danger">Reset</button>
+                    </div>
 
                 </div>
             </div>
