@@ -43,8 +43,8 @@
 		<war destfile="${jar.dest}/${app.name}.war" webxml="${web.webinf}/web.xml">
 
 			<fileset dir="${web.home}">
-				<include name="**" />
-				<exclude name="WEB-INF/**" />
+				<include name="**/*.*" />
+				
 			</fileset>
 			<lib dir="${jar.dest}" includes="**/*.jar" />
 			<lib dir="${web.webinf}/lib" includes="*.jar" />
