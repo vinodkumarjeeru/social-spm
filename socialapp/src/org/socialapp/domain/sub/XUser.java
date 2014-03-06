@@ -3,7 +3,6 @@
  */
 package org.socialapp.domain.sub;
 
-import java.util.Arrays;
 import java.util.UUID;
 
 import org.socialapp.domain.Domain;
