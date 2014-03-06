@@ -76,6 +76,17 @@
 		<servlet-name>DistrictController</servlet-name>
 		<url-pattern>/district</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>XUserController</servlet-name>
+		<servlet-class>org.socialapp.web.controller.XUserController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>XUserController</servlet-name>
+		<url-pattern>/register</url-pattern>
+	</servlet-mapping>
+
+
+
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
