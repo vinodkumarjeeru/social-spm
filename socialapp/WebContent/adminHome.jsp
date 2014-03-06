@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -16,10 +15,10 @@
     <body>
         <div class="container">
             <div class="jumbotron">
-                
+
             </div>
         </div>
-        
-        
+
+
     </body>
 </html>
