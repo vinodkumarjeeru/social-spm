@@ -24,12 +24,12 @@ public class SocialSignInController extends RootServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// String name = request.getParameter("email");
 		// String password = request.getParameter("password");
-		String name = "aaa@gmail.com";
+		String email = "aaa@gmail.com";
 		String password = "aaa";
-		LOG.debug(name);
+		LOG.debug(email);
 		LOG.debug(password);
 		XUserService service = new XUserServiceImpl();
-		XUser xUser = service.authenticate(name, password);
+		XUser xUser = service.authenticate(email, password);
 		if (xUser == null) {
 			LOG.debug("Authenticate Failed.");
 			return;
