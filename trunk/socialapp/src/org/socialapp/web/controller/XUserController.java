@@ -50,9 +50,9 @@ public class XUserController extends RootServlet {
 			LOG.debug(answer1);
 			LOG.debug(mobileNumber);
 			LOG.debug(profilePicture.get().length);
+			
 			XUser xUser = new XUser();
-			xUser.setEmail(mailId);
-			xUser.setUserName(name);
+			xUser.setEmail(mailId);			
 			xUser.setPassword(password1);
 			xUser.setSecurityQuestion(secQuestion);
 			xUser.setAnswer(answer1);
