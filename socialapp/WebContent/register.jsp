@@ -6,6 +6,7 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/jquery.js"></script>
+        <script src="js/social.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <meta charset=UTF-8">
         <link rel="icon" href="images/active_404.png">
@@ -74,8 +75,35 @@
                                                                    class="form-control" name="confirmPassword" placeholder="Confirm Password">
                         </div>
                         <div class="form-group">
-                            <label>Your District </label> <input type="text"
-                                                                 class="form-control" name="districtName" placeholder="District">
+                            <label>Your District </label> <input list="districts" type="text"
+                                                                 class="form-control" name="districtName" placeholder="District" id="districtReg">
+                            <datalist id="districts">
+
+                                <option value="Adilabad"</option>
+                                <option value="Anantapur"></option> 
+                                <option value="Chittoor"></option>
+                                <option value="East Godavari"></option>
+                                <option value="Guntur"></option>
+                                <option value="Hyderabad"></option>
+                                <option value="Karimnagar"></option>
+                                <option value="Khammam"></option>
+                                <option value="Krishna"></option>
+                                <option value="Kurnool"></option>
+                                <option value="Mahabubnagar"></option>
+                                <option value="Medak"></option>
+                                <option value="Nalgonda"></option>
+                                <option value="Nizamabad"></option>
+                                <option value="Prakasam PSR"></option> 
+                                <option value="Nellore"></option>
+                                <option value="Ranga Reddy"></option> 
+                                <option value="Srikakulam"></option>
+                                <option value="Visakhapatnam"></option>
+                                <option value="Vizianagaram"></option>
+                                <option value="Warangal"></option>
+                                <option value="West Godavari"></option>
+                                <option value="YSR Kadapa"></option>
+                                
+                            </datalist>
                         </div>
                         <div class="form-group">
                             <label>Your Phone Number </label> <input type="tel"
