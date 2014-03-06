@@ -33,11 +33,11 @@ public class DistrictController extends RootServlet {
 			@SuppressWarnings("unchecked")
 			List<FileItem> list = upload.parseRequest(request);
 			FileItem districtName = list.get(0);
-			String dname = districtName.getString();
+			String dname = districtName.getString().trim();
 			FileItem districtHeadquarters = list.get(1);
-			String dHeadquarters = districtHeadquarters.getString();
+			String dHeadquarters = districtHeadquarters.getString().trim();
 			FileItem state = list.get(2);
-			String state1 = state.getString();
+			String state1 = state.getString().trim();
 			FileItem districtMap = list.get(3);
 
 			LOG.debug(dname);
