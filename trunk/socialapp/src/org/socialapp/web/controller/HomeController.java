@@ -71,7 +71,7 @@ public class HomeController extends RootServlet {
 
 		}
 
-		if ("lp.sudarsan".equals(userName)) {
+		if ("admin.spm.3".equals(userName)) {
 			response.sendRedirect("adminHome.jsp");
 			return;
 		}
