@@ -19,7 +19,7 @@
 
                 <ul class="dropdown-menu">
 
-                    <li class="dropdown"><a href="adminPoliticsParliament.jsp">Manage Parliament Details</a>
+                    <li class="dropdown"><a href="adminPoliticsParliament.jsp">Manage Districts</a>
                     <li><a href="#">Manage Assembly Details</a></li>
                 </ul></li>
             <li><a href="#">Movies</a></li>
