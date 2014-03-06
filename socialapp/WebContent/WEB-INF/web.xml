@@ -51,7 +51,6 @@
 		<servlet-name>HomeController</servlet-name>
 		<url-pattern>/home</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>LoginController</servlet-name>
 		<servlet-class>org.socialapp.web.controller.LoginController</servlet-class>
@@ -68,12 +67,20 @@
 		<servlet-name>ForgotPasswordController</servlet-name>
 		<url-pattern>/getPassword</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DistrictController</servlet-name>
+		<servlet-class>org.socialapp.web.controller.DistrictController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DistrictController</servlet-name>
+		<url-pattern>/district</url-pattern>
+	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-	
 	<error-page>
-	<error-code>404</error-code>
-	<location>/errorPage.jsp</location>
+		<error-code>404</error-code>
+		<location>/errorPage.jsp</location>
 	</error-page>
 </web-app>
