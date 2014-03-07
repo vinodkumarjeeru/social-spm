@@ -38,19 +38,20 @@
 					action="${pageContext.request.contextPath}/district">
 					<div class="form-group">
 						<label>District Name</label> <input type="text"
-							class="form-control" name="districtName">
+							class="form-control" name="districtName" id="districtName">
 					</div>
 					<div class="form-group">
 						<label>District Headquarters </label> <input type="text"
-							class="form-control" name="districtHeadquarters">
+							class="form-control" name="districtHeadquarters"
+							id="districtHeadquarters">
 					</div>
 					<div class="form-group">
 						<label>State </label> <input type="text" class="form-control"
-							name="state">
+							name="state" id="state">
 					</div>
 					<div class="form-group">
 						<label>District Map .. </label> <input type="file"
-							name="districtMap">
+							name="districtMap" id="districtMap">
 					</div>
 
 

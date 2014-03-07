@@ -41,7 +41,7 @@
 
 			</div>
 			<div class="panel-body">
-				<form class="form-group" method="post" enctype="multipart/form-data">
+				<form class="form-group" method="post">
 					<div class="form-group">
 						<label> E-mail </label> <input type="email" class="form-control"
 							name="email" placeholder="E-Mail"> <span
