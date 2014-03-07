@@ -15,7 +15,7 @@ import org.socialapp.web.utils.RootServlet;
 public class LoginController extends RootServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger LOG = Logger
-			.getLogger(ForgotPasswordController.class);
+			.getLogger(LoginController.class);
 
 	protected void socialService(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
