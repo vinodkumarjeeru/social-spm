@@ -7,6 +7,7 @@ import org.hibernate.Query;
 import org.socialapp.dao.XUserDAO;
 import org.socialapp.dao.impl.XUserDAOImpl;
 import org.socialapp.domain.sub.XUser;
+import org.socialapp.queries.SocialAppQueries;
 import org.socialapp.service.XUserService;
 import org.socialapp.utils.HibernateUtils;
 
@@ -42,10 +43,8 @@ public class XUserServiceImpl implements XUserService {
 		XUser user = null;
 		try {
 			HibernateUtils.beginTransaction();
-			Query query = HibernateUtils
-					.currentSession()
-					.createQuery(
-							"from XUser xUser where xUser.email=:email and xUser.password=:password")
+			Query query = HibernateUtils.currentSession()
+					.createQuery(SocialAppQueries.XUSER_AUTHENTICATE)
 					.setParameter("email", email)
 					.setParameter("password", password);
 			user = xUserDAO.findOne(query);

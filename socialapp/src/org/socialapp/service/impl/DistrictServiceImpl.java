@@ -8,6 +8,7 @@ import org.hibernate.Query;
 import org.socialapp.dao.DistrictDAO;
 import org.socialapp.dao.impl.DistrictDAOImpl;
 import org.socialapp.domain.sub.District;
+import org.socialapp.queries.SocialAppQueries;
 import org.socialapp.service.DistrictService;
 import org.socialapp.utils.HibernateUtils;
 
@@ -53,8 +54,7 @@ public class DistrictServiceImpl implements DistrictService {
 			HibernateUtils.beginTransaction();
 			Query query = HibernateUtils
 					.currentSession()
-					.createQuery(
-							"from District district where district.districtName=:districtName")
+					.createQuery(SocialAppQueries.DISTRICT_FIND_BY_DISTRICTNAME)
 					.setParameter("districtName", districtName);
 			district = districtDAO.findOne(query);
 			HibernateUtils.closeSession();
