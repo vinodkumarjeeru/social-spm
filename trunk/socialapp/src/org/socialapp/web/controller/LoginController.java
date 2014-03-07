@@ -1,6 +1,7 @@
 package org.socialapp.web.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -16,12 +17,21 @@ public class LoginController extends RootServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger LOG = Logger.getLogger(LoginController.class);
 
-	protected void socialService(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		String email = request.getParameter("email").trim();
-		String password = request.getParameter("password").trim();
-		LOG.debug(email);
-		LOG.debug(password);
+    
 
-	}
+    protected void socialService(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException {
+
+        
+        response.setContentType("text/html");
+
+        String email = request.getParameter("email").trim();
+        String password = request.getParameter("password").trim();
+        LOG.debug(email);
+        LOG.debug(password);
+
+        PrintWriter out = response.getWriter();
+        out.println("1");
+
+    }
 }
