@@ -192,6 +192,5 @@ public class XUser extends Domain {
 	 * 
 	 * @see java.lang.Object#toString()
 	 */
-	
 
 }
