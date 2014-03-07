@@ -75,7 +75,7 @@
                         <a href="#" class="btn btn-sm btn-primary">Sign In</a> 
                         <a href="#" class="btn btn-sm btn-danger">Clear</a>
                         <div style="float: right">
-                            <a href="#" class="" >Forgot Password</a>
+                            <a href="forgotPassword.jsp" class="" >Forgot Password</a>
                         </div>
                     </div>
                         
