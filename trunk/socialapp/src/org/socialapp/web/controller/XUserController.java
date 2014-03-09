@@ -3,6 +3,7 @@ package org.socialapp.web.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -62,6 +63,13 @@ public class XUserController extends RootServlet {
 			LOG.debug(secQuestion);
 			LOG.debug(givenAnswer);
 			// LOG.debug(profilePicture.get().length);
+			
+			if(! newPassword.equalsIgnoreCase(rePassword)) {
+				request.setAttribute("errMsg", "Please Confirm your Password");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/register.jsp");
+				dispatcher.forward(request, response);
+				return;
+			}
 
 			XUser xUser = new XUser();
 			// xUser.setFbId(1L);
@@ -82,6 +90,13 @@ public class XUserController extends RootServlet {
 			// LOG.debug(xUser);
 			XUserService service = new XUserServiceImpl();
 			service.createOrUpdate(xUser);
+
+			request.setAttribute("msg",
+					"Registration Completed, ");
+
+			RequestDispatcher dispatcher = request
+					.getRequestDispatcher("/register.jsp");
+			dispatcher.forward(request, response);
 
 		} catch (FileUploadException e) {
 			LOG.debug(e);
