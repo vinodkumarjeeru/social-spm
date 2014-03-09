@@ -20,6 +20,8 @@ var SocialApp = {
         }
 
         $('#btnSignIn').attr('disabled', 'disabled');
+        $('#btnClear').attr('disabled', 'disabled');
+        
         $('#ajaxLoad').show();
         $.post(ctx + '/login',
                 $('#signInForm').serialize(),
@@ -30,8 +32,8 @@ var SocialApp = {
                     }else {
                         $('#info').show();
                         $('#btnSignIn').removeAttr('disabled');
+                        $('#btnClear').removeAttr('disabled');
                     }
-                    
                 }
         );
 
