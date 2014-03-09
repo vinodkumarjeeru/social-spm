@@ -57,12 +57,12 @@
                                   id="CloseModal_CSS">&times;</span>
                 </div>
             </div>
-            
+
             <input type="hidden" id="ctx" value="${pageContext.request.contextPath}"/>
             <div class="modal-body">
                 <form role="role" id="signInForm">
-                    
-                    
+
+
                     <div id="info">
                         <span class="glyphicon glyphicon-warning-sign text-danger text-center"></span>&nbsp;&nbsp;&nbsp;<span class="text-danger">Invalid User Name/Password</span>
                     </div>
@@ -71,37 +71,35 @@
                     <div class="form-group" id="lblUserName">
 
                         <label for="UserName" class="control-label" >E-Mail</label> <input type="text"
-                                                                    class="form-control" placeholder="E-Mail" name="email" id="email">
+                                                                                           class="form-control" placeholder="E-Mail" name="email" id="email">
                     </div>
 
                     <div class="form-group" id="lblPassword">
                         <label for="Password" class="control-label">Password</label> <input type="password"
-                                                                      class="form-control" placeholder="Password" name="password" id="password">
+                                                                                            class="form-control" placeholder="Password" name="password" id="password">
                     </div>
-
-                    <div class="form-group">
-                        <a href="#" class="btn btn-sm btn-primary" id="btnSignIn">Sign In</a> 
-                        <a href="#" class="btn btn-sm btn-danger" id="btnClear">Clear</a>
-                        <div style="float: right">
-                            <a href="forgotPassword.jsp" class="" >Forgot Password</a>
-                        </div>
-                    </div>
-
-                    <div id="ajaxLoad">
-                        <img src="images/ajax-loader.gif"/>&nbsp;Please Wait..
-                        
-                    </div>
-                    
-                    <br/><br/>
-
-                    <div class="form-group">
-                        <label><a href="${pageContext.request.contextPath}/login.htm"><img src="images/active_404.png"></a></label>
-
-                        <label style="float: right"><a href="register.jsp" class="btn btn-lg btn-primary" id="btnLogin">Register With InfoHub</a></label>
-                    </div>
-
 
                 </form>
+
+                <div class="form-group">
+                    <button  class="btn btn-sm btn-primary" id="btnSignIn">Sign In</button>
+                    <button  class="btn btn-sm btn-danger" id="btnClear">Clear</button>
+                    <div style="float: right">
+                        <a href="forgotPassword.jsp" class="" >Forgot Password</a>
+                    </div>
+                </div>
+
+
+                <div id="ajaxLoad">
+                    <img src = 'images/ajax-loader.gif'/>&nbsp;Please Wait ..
+                </div>
+                <br/>
+
+                <div class="form-group">
+                    <label><a href="${pageContext.request.contextPath}/login.htm"><img src="images/active_404.png"></a></label>
+
+                    <label style="float: right"><a href="register.jsp" class="btn btn-lg btn-primary" id="btnLogin">Register With InfoHub</a></label>
+                </div>
 
 
             </div>
@@ -112,6 +110,10 @@
 
 
 </div>
+
+
+
+
 </div>
 
 <script type="text/javascript" src="js/social.js"></script>
@@ -121,5 +123,5 @@
 </script>
 
 <script type="text/javascript">
-		SocialApp.CONTEXT = '${pageContext.request.contextPath}';
-	</script>
+    SocialApp.CONTEXT = '${pageContext.request.contextPath}';
+</script>
