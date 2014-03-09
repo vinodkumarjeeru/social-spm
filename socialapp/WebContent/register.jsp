@@ -1,5 +1,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,8 +65,7 @@
 					</div>
 					<div class="form-group">
 						<label> E-mail </label> <input type="email" class="form-control"
-							name="email" placeholder="E-Mail" id="email"> <span
-							class="help-block text-danger">Please enter ur usrname</span>
+							name="email" placeholder="E-Mail" id="email"> 
 					</div>
 					<div class="form-group">
 						<label>Password </label> <input type="password"
@@ -75,6 +76,9 @@
 						<label>Confirm Password</label> <input type="password"
 							class="form-control" name="confirmPassword"
 							placeholder="Confirm Password" id="confirmPassword">
+						<c:if test="${ not empty errMsg}">
+							<p class="help-block" style="color:red;"><c:out value="${errMsg}" /></p>
+						</c:if>
 					</div>
 					<div class="form-group">
 						<label>Your District </label> <input list="districts" type="text"
@@ -146,6 +150,12 @@
 					<div class="form-group">
 						<input type="submit" class="btn btn-success" value="Submit">
 						<button type="button" class="btn btn-danger">Reset</button>
+						<c:if test="${not empty msg}">
+							<h4>
+								<c:out value="${msg}" />
+								<a href="#">Sign In</a> to access Your Account.
+							</h4>
+						</c:if>
 					</div>
 				</form>
 			</div>
