@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.socialapp.domain.sub.XUser;
+import org.socialapp.service.XUserService;
+import org.socialapp.service.impl.XUserServiceImpl;
 import org.socialapp.web.utils.RootServlet;
 
 /**
@@ -31,7 +34,20 @@ public class LoginController extends RootServlet {
         LOG.debug(password);
 
         PrintWriter out = response.getWriter();
-        out.println("1");
+        
+        XUserService xUserService = new XUserServiceImpl();
+        XUser xUser = xUserService.authenticate(email, password);
+        
+        LOG.debug("==================="+xUser);
+        
+        if(xUser == null) {
+            out.print("0");
+            return;
+        }
+        
+        out.print("1");
+        out.close();
+        
 
     }
 }
