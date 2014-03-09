@@ -21,15 +21,15 @@ var SocialApp = {
 
         $('#btnSignIn').attr('disabled', 'disabled');
         $('#btnClear').attr('disabled', 'disabled');
-        
+
         $('#ajaxLoad').show();
         $.post(ctx + '/login',
                 $('#signInForm').serialize(),
                 function(response) {
-                   $('#ajaxLoad').hide();
-                    if(response == 1) {
+                    $('#ajaxLoad').hide();
+                    if (response == 1) {
                         window.location = ctx + '/userHome.jsp';
-                    }else {
+                    } else {
                         $('#info').show();
                         $('#btnSignIn').removeAttr('disabled');
                         $('#btnClear').removeAttr('disabled');
@@ -52,18 +52,19 @@ var SocialApp = {
 
         // AJAX Loader Hide on Startup.
         $('#ajaxLoad').hide();
-        
+
         // Sign In Action
         $('#btnSignIn').click(SocialApp.signin);
 
         // Clear Button Action
         $('#btnClear').click(SocialApp.resetSignUpForm);
+
+        // Wait Message for register on Click
+        $('#btnRegisterInfoHub').click(function() {
+            var btn = $(this)
+            btn.button('loading');
+            window.location = ctx + 'register.jsp';
+        });
     }
 
 };
-
-
-
-
-
-
