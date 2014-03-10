@@ -3,6 +3,7 @@ package org.socialapp.web.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +28,7 @@ public class DistrictController extends RootServlet {
 
 	protected void socialService(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		boolean error = false;
 		DiskFileItemFactory factory = new DiskFileItemFactory();
 		ServletFileUpload upload = new ServletFileUpload(factory);
 		try {
@@ -39,6 +41,27 @@ public class DistrictController extends RootServlet {
 			FileItem state = list.get(2);
 			String state1 = state.getString().trim();
 			FileItem districtMap = list.get(3);
+
+			if (dname == null || dname.length() == 0) {
+				request.setAttribute("districtNameError",
+						"Please Enter District Name");
+				error = true;
+			}
+			if (dHeadquarters == null || dHeadquarters.length() == 0) {
+				request.setAttribute("districtHeadquartersError",
+						"Please Enter District HeadQuarters");
+				error = true;
+			}
+			if (state1 == null || state1.length() == 0) {
+				request.setAttribute("stateError", "Please Enter State Name");
+				error = true;
+			}
+			if (error) {
+				RequestDispatcher dispatcher = request
+						.getRequestDispatcher("/adminPolitparliCreate.jsp");
+				dispatcher.forward(request, response);
+				return;
+			}
 
 			LOG.debug(dname);
 			LOG.debug(dHeadquarters);
