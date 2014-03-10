@@ -49,37 +49,37 @@
 </nav>
 
 <div id="fullUserOptions" class="collapse pull-right well" style="position: relative;top: -20px;left:65px;width: fit-content">
-    <div id="border">
-        <ul class="nav nav-tabs list-unstyled list-inline" style="width: max-content;padding: 20px;">
-            <li>
 
-                <ul class="nav nav-stacked">
-                    <img src="images/MaleImg.jpg" height="100px" width="100px">
-                    <li class="sr-only">break</li>
-                    <li><i class="btn-link">Change Picture</i></li>
-                </ul>
-            </li>
-            <li class="sr-only">break</li>
-            <li class="sr-only">break</li>
-            <li class="sr-only">break</li>
-            <li class="sr-only">break</li>
-            <li class="sr-only">break</li>
-            <li class="sr-only">break</li>
-            <li class="pull-right">
-                <ul class="nav nav-stacked list-unstyled ">
-                    <li> <b class="btn btn-primary">My Profile</b></li>
-                    <li class="sr-only">break</li>
-                    <li class="sr-only">break</li>
-                    <li><b class="btn btn-primary">Request Admin</b></li>
-                    <li class="sr-only">break</li>
-                    <li class="sr-only">break</li>
-                    <li><b class="btn btn-danger">Logout</b></li>
-                </ul>
-            </li>
+    <ul class="nav nav-tabs list-unstyled list-inline" style="width: max-content;padding: 20px;">
+        <li>
+
+            <ul class="nav nav-stacked">
+                <img src="images/MaleImg.jpg" height="100px" width="100px">
+                <li class="sr-only">break</li>
+                <li><i class="btn-link">Change Picture</i></li>
+            </ul>
+        </li>
+        <li class="sr-only">break</li>
+        <li class="sr-only">break</li>
+        <li class="sr-only">break</li>
+        <li class="sr-only">break</li>
+        <li class="sr-only">break</li>
+        <li class="sr-only">break</li>
+        <li class="pull-right">
+            <ul class="nav nav-stacked list-unstyled ">
+                <li> <b class="btn btn-primary">My Profile</b></li>
+                <li class="sr-only">break</li>
+                <li class="sr-only">break</li>
+                <li><b class="btn btn-primary">Request Admin</b></li>
+                <li class="sr-only">break</li>
+                <li class="sr-only">break</li>
+                <li><b class="btn btn-danger">Logout</b></li>
+            </ul>
+        </li>
 
 
-        </ul>
-    </div>
+    </ul>
+
 </div>
 
 
