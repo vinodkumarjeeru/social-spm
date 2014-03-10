@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,11 +42,19 @@
 
 			</div>
 			<div class="panel-body">
-				<form class="form-group" method="post">
+				<form class="form-group" method="post"
+					action="${pageContext.request.contextPath}/getPassword">
+
 					<div class="form-group">
 						<label> E-mail </label> <input type="email" class="form-control"
-							name="email" placeholder="E-Mail"> <span
-							class="help-block text-danger">Please enter username</span>
+							name="email" placeholder="E-Mail"
+							value="<%=(request.getParameter("email") != null) ? (request
+					.getParameter("email")) : ""%>">
+						<c:if test="${not empty emailError}">
+							<span class="help-block text-danger"><font color="red">
+									<c:out value="${emailError}" />
+							</font></span>
+						</c:if>
 					</div>
 
 					<div class="form-group">
@@ -60,17 +69,22 @@
 							<option>What time of the day were you born?</option>
 							<option>Who was your childhood hero?</option>
 							<option>In what year was your father born?</option>
-
 						</select>
+						<c:if test="${not empty secQuestionError}">
+							<span class="help-block text-danger"> <font color="red"><c:out /></font>
+							</span>
+						</c:if>
 					</div>
+
 					<div class="form-group">
 						<label>Answer</label> <input type="text" class="form-control"
 							name="answer" placeholder="Answer">
-
+						<c:if test="${not empty answerError}">
+							<span class="help-block text-danger"> <font color="red"><c:out
+										value="${answerError }"></c:out></font>
+							</span>
+						</c:if>
 					</div>
-
-
-
 
 					<div class="form-group">
 						<input type="submit" class="btn btn-success" value="Submit">
