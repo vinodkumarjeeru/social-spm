@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.socialapp.domain.sub.XUser;
@@ -41,6 +42,9 @@ public class LoginController extends RootServlet {
 		}
 		out.print("1");
 		out.close();
+
+		HttpSession session = request.getSession();
+		session.setAttribute("user", xUser);
 
 	}
 }
