@@ -14,8 +14,10 @@ public interface XUserService {
 
 	List<XUser> getAll();
 
-	XUser findBy(String userName);
+	XUser findBy(String email);
 	
 	XUser authenticate(String email, String password);
+	
+	String getPassword(String email, String securityQuestion, String answer);
 
 }
