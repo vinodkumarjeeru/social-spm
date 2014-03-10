@@ -46,8 +46,8 @@
 	</div>
 
 
-	<div id="newNavbarcollapse" class="collapse">
-		<ul class="nav navbar-nav">
+	<div id="" class="collapse">
+		<ul class="">
 			<li><a href="#">My Profile</a></li>
 			<li><a href="${pageContext.request.contextPath}/sign-out">Logout</a></li>
 			<li><a href="#">Change Display Picture</a></li>
@@ -84,7 +84,7 @@
 				<li><b class="btn btn-primary">Request Admin</b></li>
 				<li class="sr-only">break</li>
 				<li class="sr-only">break</li>
-				<li><b class="btn btn-danger">Logout</b></li>
+				<li><a href="${pageContext.request.contextPath}/sign-out" class="btn btn-danger">Logout</a></li>
 			</ul>
 		</li>
 
