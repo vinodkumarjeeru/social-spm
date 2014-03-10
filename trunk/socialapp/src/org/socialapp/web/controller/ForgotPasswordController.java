@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.socialapp.service.XUserService;
+import org.socialapp.service.impl.XUserServiceImpl;
 import org.socialapp.web.utils.RootServlet;
 
 /**
@@ -45,10 +47,27 @@ public class ForgotPasswordController extends RootServlet {
 			dispatcher.forward(request, response);
 			return;
 		}
+		XUserService service = new XUserServiceImpl();
+		String password = service.getPassword(email, securityQuestion, answer);
 
 		LOG.debug(email);
 		LOG.debug(securityQuestion);
 		LOG.debug(answer);
+		LOG.debug(password);
+
+		if (password == null) {
+			request.setAttribute("passwordMessage",
+					"Invalid Details Entered!");
+			RequestDispatcher dispatcher = request
+					.getRequestDispatcher("/forgotPassword.jsp");
+			dispatcher.forward(request, response);
+			return;
+		}
+		request.setAttribute("passwordMessage",
+				"Your Password Will Be Sent To Your E-Mail Id.");
+		RequestDispatcher dispatcher = request
+				.getRequestDispatcher("/forgotPassword.jsp");
+		dispatcher.forward(request, response);
 
 	}
 }
