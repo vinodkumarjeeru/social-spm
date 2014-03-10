@@ -87,7 +87,15 @@
 
 					<div class="form-group">
 						<input type="submit" class="btn btn-success" value="Submit">
-						<button type="button" class="btn btn-danger">cancel</button>
+						<button type="button" class="btn btn-danger">Cancel</button>
+						<c:if test="${not empty passwordMessage }">
+							<h4>
+								<c:out value="${passwordMessage }"></c:out>
+
+							</h4>
+
+						</c:if>
+
 					</div>
 				</form>
 			</div>
