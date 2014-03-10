@@ -1,5 +1,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,15 +40,31 @@
 					<div class="form-group">
 						<label>District Name</label> <input type="text"
 							class="form-control" name="districtName" id="districtName">
+						<c:if test="${not empty districtNameError }">
+							<h6>
+								<font color="red"><c:out value="${districtNameError }" /></font>
+							</h6>
+						</c:if>
 					</div>
 					<div class="form-group">
 						<label>District Headquarters </label> <input type="text"
 							class="form-control" name="districtHeadquarters"
 							id="districtHeadquarters">
+						<c:if test="${not empty districtHeadquartersError }">
+							<h6>
+								<font color="red"> <c:out value="${districtHeadquartersError}" />
+								</font>
+							</h6>
+						</c:if>
 					</div>
 					<div class="form-group">
 						<label>State </label> <input type="text" class="form-control"
 							name="state" id="state">
+						<c:if test="${not empty stateError }">
+							<h6>
+								<font color="red"><c:out value="${stateError}" /></font>
+							</h6>
+						</c:if>
 					</div>
 					<div class="form-group">
 						<label>District Map .. </label> <input type="file"
