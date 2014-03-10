@@ -20,34 +20,27 @@ public class LoginController extends RootServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger LOG = Logger.getLogger(LoginController.class);
 
-    
+	protected void socialService(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 
-    protected void socialService(HttpServletRequest request,
-            HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
 
-        
-        response.setContentType("text/html");
+		String email = request.getParameter("email").trim();
+		String password = request.getParameter("password").trim();
+		LOG.debug(email);
+		LOG.debug(password);
+		XUserService xUserService = new XUserServiceImpl();
+		XUser xUser = xUserService.authenticate(email, password);
 
-        String email = request.getParameter("email").trim();
-        String password = request.getParameter("password").trim();
-        LOG.debug(email);
-        LOG.debug(password);
+		LOG.debug("===================" + xUser);
 
-        PrintWriter out = response.getWriter();
-        
-        XUserService xUserService = new XUserServiceImpl();
-        XUser xUser = xUserService.authenticate(email, password);
-        
-        LOG.debug("==================="+xUser);
-        
-        if(xUser == null) {
-            out.print("0");
-            return;
-        }
-        
-        out.print("1");
-        out.close();
-        
+		if (xUser == null) {
+			out.print("0");
+			return;
+		}
+		out.print("1");
+		out.close();
 
-    }
+	}
 }
