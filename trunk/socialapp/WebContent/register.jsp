@@ -57,28 +57,68 @@
 						<label>Your Name </label>
 						<div class="input-group">
 							<input type="text" class="form-control" placeholder="First Name"
-								id="fname" name="firstName"> <input type="text"
-								class="form-control" placeholder="Last Name" id="lname"
-								name="lastName">
+								id="fname" name="firstName" value="${param.firstName}">
+							<c:if test="${not empty firstNameError}">
+								<h6>
+									<font color="red"><c:out value="${firstNameError }"/>
+									</font>
+								</h6>
+							</c:if>
+							<input type="text" class="form-control" placeholder="Last Name"
+								id="lname" name="lastName" value="${param.lastName }">
+							<c:if test="${not empty lastNameError}">
+								<h6>
+									<font color="red"><c:out value="${lastNameError }"></c:out>
+									</font>
+								</h6>
+							</c:if>
 
 						</div>
 					</div>
 					<div class="form-group">
 						<label> E-mail </label> <input type="email" class="form-control"
-							name="email" placeholder="E-Mail" id="email"> 
+							name="email" placeholder="E-Mail" id="email">
+						<c:if test="${not empty mailIdError}">
+							<h6>
+								<font color="red"><c:out value="${mailIdError }"></c:out>
+								</font>
+							</h6>
+						</c:if>
+
 					</div>
 					<div class="form-group">
 						<label>Password </label> <input type="password"
 							class="form-control" name="password" placeholder="Password"
 							id="password">
+						<c:if test="${not empty newPasswordError}">
+							<h6>
+								<font color="red"><c:out value="${newPasswordError }"></c:out>
+								</font>
+							</h6>
+						</c:if>
 					</div>
 					<div class="form-group">
 						<label>Confirm Password</label> <input type="password"
 							class="form-control" name="confirmPassword"
 							placeholder="Confirm Password" id="confirmPassword">
 						<c:if test="${ not empty errMsg}">
-							<p class="help-block" style="color:red;"><c:out value="${errMsg}" /></p>
+							<p class="help-block" style="color: red;">
+								<c:out value="${errMsg}" />
+							</p>
 						</c:if>
+						<c:if test="${not empty rePasswordError}">
+							<h6>
+								<font color="red"><c:out value="${rePasswordError }"></c:out>
+								</font>
+							</h6>
+						</c:if>
+						<c:if test="${not empty checkPasswordError}">
+							<h6>
+								<font color="red"><c:out value="${checkPasswordError }"></c:out>
+								</font>
+							</h6>
+						</c:if>
+
 					</div>
 					<div class="form-group">
 						<label>Your District </label> <input list="districts" type="text"
@@ -111,11 +151,24 @@
 							<option value="YSR Kadapa"></option>
 
 						</datalist>
+						<c:if test="${not empty districtError}">
+							<h6>
+								<font color="red"><c:out value="${districtError}"></c:out>
+								</font>
+							</h6>
+						</c:if>
+
 					</div>
 					<div class="form-group">
 						<label>Your Phone Number </label> <input type="tel"
 							class="form-control" name="mobile" placeholder="Phone Number"
 							id="mobile">
+						<c:if test="${not empty mobileNumberError}">
+							<h6>
+								<font color="red"><c:out value="${mobileNumberError}"></c:out>
+								</font>
+							</h6>
+						</c:if>
 					</div>
 					<div class="form-group">
 						<label>Security Questions</label> <select class="form-control"
@@ -131,10 +184,23 @@
 							<option>In what year was your father born?</option>
 
 						</select>
+						<c:if test="${not empty secQuestionError}">
+							<h6>
+								<font color="red"><c:out value="${secQuestionError}"></c:out>
+								</font>
+							</h6>
+						</c:if>
+
 					</div>
 					<div class="form-group">
 						<label>Answer</label> <input type="text" class="form-control"
 							name="answer" placeholder="Answer" id="answer">
+						<c:if test="${not empty givenAnswerError}">
+							<h6>
+								<font color="red"><c:out value="${givenAnswerError}"></c:out>
+								</font>
+							</h6>
+						</c:if>
 
 					</div>
 

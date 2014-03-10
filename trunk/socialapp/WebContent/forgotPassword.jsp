@@ -47,9 +47,7 @@
 
 					<div class="form-group">
 						<label> E-mail </label> <input type="email" class="form-control"
-							name="email" placeholder="E-Mail"
-							value="<%=(request.getParameter("email") != null) ? (request
-					.getParameter("email")) : ""%>">
+							name="email" placeholder="E-Mail" value="${param.email }">
 						<c:if test="${not empty emailError}">
 							<span class="help-block text-danger"><font color="red">
 									<c:out value="${emailError}" />
@@ -59,7 +57,7 @@
 
 					<div class="form-group">
 						<label>Security Questions</label> <select class="form-control"
-							name="securityQuestion">
+							name="securityQuestion" value="${param.securityQuestion }">
 							<option>Security Question</option>
 							<option>What is the name of your favorite childhood
 								friend?</option>
@@ -71,7 +69,8 @@
 							<option>In what year was your father born?</option>
 						</select>
 						<c:if test="${not empty secQuestionError}">
-							<span class="help-block text-danger"> <font color="red"><c:out value="${secQuestionError}"/></font>
+							<span class="help-block text-danger"> <font color="red"><c:out
+										value="${secQuestionError}" /></font>
 							</span>
 						</c:if>
 					</div>
