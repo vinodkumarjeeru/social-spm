@@ -34,8 +34,22 @@ public class XUserServiceImpl implements XUserService {
 	}
 
 	@Override
-	public XUser findBy(String userName) {
-		return null;
+	public XUser findBy(String email) {
+
+		XUser xUser = null;
+
+		try {
+			HibernateUtils.beginTransaction();
+			Query query = HibernateUtils.currentSession().createQuery(SocialAppQueries.XUSER_FIND_BY_EMAIL)
+					.setParameter("email", email);
+			xUser = xUserDAO.findOne(query);
+			HibernateUtils.commitTransaction();
+
+		} catch (Exception exception) {
+			LOG.debug("", exception);
+		}
+
+		return xUser;
 	}
 
 	@Override
@@ -54,6 +68,27 @@ public class XUserServiceImpl implements XUserService {
 			LOG.debug("", exception);
 		}
 		return user;
+	}
+
+	@Override
+	public String getPassword(String email, String securityQuestion, String answer) {
+		String password = null;
+
+		try {
+			HibernateUtils.beginTransaction();
+			Query query = HibernateUtils.currentSession().createQuery(SocialAppQueries.XUSER_GET_PASSWORD)
+					.setParameter("email", email)
+					.setParameter("securityQuestion", securityQuestion)
+					.setParameter("answer", answer);
+
+			XUser xUser = xUserDAO.findOne(query);
+			password = xUser.getPassword();
+			HibernateUtils.commitTransaction();
+
+		} catch (Exception exception) {
+			LOG.debug("", exception);
+		}
+		return password;
 	}
 
 }
