@@ -48,7 +48,7 @@
 </nav>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-	aria-labelledby="myModalLabel" aria-hidden="true">
+     aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header bg-primary">
@@ -60,7 +60,7 @@
 
 			<input type="hidden" id="ctx"
 				value="${pageContext.request.contextPath}" />
-			<div class="modal-body">
+                        <div class="modal-body" style="height: 380px;">
 				<form role="role" id="signInForm">
 
 
@@ -104,7 +104,7 @@
 				<div class="form-group">
 					<label><a
 						href="${pageContext.request.contextPath}/login.htm"><img
-							src="images/active_404.png"></a></label> <label style="float: right"><button
+							src="images/active_404.png"></a></label> <label style="float: right;" ><button
                                                                 class="btn btn-lg btn-primary" id="btnRegisterInfoHub" type="button" data-loading-text="Please Wait ....">Register
 							With InfoHub</button></label>
 				</div>
