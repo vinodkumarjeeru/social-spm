@@ -26,7 +26,7 @@ public class ForgotPasswordController extends RootServlet {
 				.trim();
 		String answer = request.getParameter("answer").trim();
 
-		if (email.length() == 0 || email == null) {
+		if (email == null || email.length() == 0) {
 			request.setAttribute("emailError", "Please Enter Email Id");
 			error = true;
 		}
@@ -35,7 +35,7 @@ public class ForgotPasswordController extends RootServlet {
 					"Please Select Security Question");
 			error = true;
 		}
-		if (answer.length() == 0 || answer == null) {
+		if (answer == null || answer.length() == 0) {
 			request.setAttribute("answerError", "Please Enter answer");
 			error = true;
 		}
