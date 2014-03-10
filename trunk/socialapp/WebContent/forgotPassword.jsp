@@ -71,14 +71,14 @@
 							<option>In what year was your father born?</option>
 						</select>
 						<c:if test="${not empty secQuestionError}">
-							<span class="help-block text-danger"> <font color="red"><c:out /></font>
+							<span class="help-block text-danger"> <font color="red"><c:out value="${secQuestionError}"/></font>
 							</span>
 						</c:if>
 					</div>
 
 					<div class="form-group">
 						<label>Answer</label> <input type="text" class="form-control"
-							name="answer" placeholder="Answer">
+							name="answer" placeholder="Answer" value="${param.answer}">
 						<c:if test="${not empty answerError}">
 							<span class="help-block text-danger"> <font color="red"><c:out
 										value="${answerError }"></c:out></font>
