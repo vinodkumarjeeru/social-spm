@@ -23,15 +23,73 @@ public class ChangeProfileController extends RootServlet {
 
 	public void socialService(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
-		String email = request.getParameter("email").trim();
+		String action = request.getParameter("action");
+		LOG.debug(action);
 		XUserService service = new XUserServiceImpl();
-		XUser user = service.findBy(email);
-		LOG.debug(user.getEmail());
-                
-                request.setAttribute("user",user);
-               RequestDispatcher dispatcher = request.getRequestDispatcher("/userProfile.jsp");
-               dispatcher.forward(request, response);
+
+		if ("view".equalsIgnoreCase(action)) {
+			String email = request.getParameter("email").trim();
+			XUser user = service.findBy(email);
+			LOG.debug(user.getEmail());
+			request.setAttribute("user", user);
+			RequestDispatcher dispatcher = request
+					.getRequestDispatcher("/userProfile.jsp");
+			dispatcher.forward(request, response);
+			return;
+
+		}
+
+		if ("update".equalsIgnoreCase(action)) {
+			String firstName = request.getParameter("firstName").trim();
+			String lastName = request.getParameter("lastName").trim();
+			LOG.debug(firstName);
+			LOG.debug(lastName);
+			String userEmail = request.getParameter("email1").trim();
+			LOG.debug(userEmail);
+			XUser user = service.findBy(userEmail);
+			LOG.debug(user.getFirstName());
+			LOG.debug(user.getLastName());
+			LOG.debug(user.getEmail());
+			LOG.debug(user.getId());
+			LOG.debug(user.getDistrict());
+			LOG.debug(user.getCreatedBy());
+			LOG.debug(user.getCreatedOn());
+			LOG.debug(user.getActive());
+
+			String district = request.getParameter("district").trim();
+			String mobile = request.getParameter("mobile").trim();
+			String secQuestion = request.getParameter("securityQuestion")
+					.trim();
+			String answer = request.getParameter("answer").trim();
+
+			XUser xUser = new XUser();
+
+			xUser.setId(user.getId());
+			xUser.setGuid(user.getGuid());
+
+			xUser.setEmail(userEmail);
+			xUser.setFirstName(firstName);
+			xUser.setLastName(lastName);
+			xUser.setPassword(user.getPassword());
+			xUser.setDistrict(district);
+			xUser.setMobile(mobile);
+			xUser.setSecurityQuestion(secQuestion);
+			xUser.setAnswer(answer);
+
+			xUser.setProfilePic(user.getProfilePic());
+			xUser.setCreatedOn(user.getCreatedOn());
+			xUser.setCreatedBy(user.getCreatedBy());
+			xUser.setModifiedBy(user.getModifiedBy());
+			xUser.setModifiedOn(new java.util.Date());
+			xUser.setActive(1L);
+
+			LOG.debug(xUser.getFirstName());
+			LOG.debug(xUser.getMobile());
+			LOG.debug(xUser.getEmail());
+
+			service.update(xUser);
+			return;
+		}
 
 	}
 }
