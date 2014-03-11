@@ -10,7 +10,9 @@ import org.socialapp.domain.sub.XUser;
  */
 public interface XUserService {
 	
-	void createOrUpdate(XUser xUser);
+	void create(XUser xUser);
+	
+	void update(XUser xUser);
 
 	List<XUser> getAll();
 
