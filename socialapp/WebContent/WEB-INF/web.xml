@@ -107,19 +107,22 @@
 		<servlet-name>UserImageResponseController</servlet-name>
 		<url-pattern>/userImage</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>SignOutController</servlet-name>
 		<servlet-class>org.socialapp.web.controller.SignOutController</servlet-class>
-
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>SignOutController</servlet-name>
 		<url-pattern>/sign-out</url-pattern>
-
 	</servlet-mapping>
-
+	<servlet>
+		<servlet-name>ChangeProfileController</servlet-name>
+		<servlet-class>org.socialapp.web.controller.ChangeProfileController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>ChangeProfileController</servlet-name>
+	    <url-pattern>/profile</url-pattern>
+	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
