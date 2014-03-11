@@ -147,7 +147,7 @@ public class XUserController extends RootServlet {
 			xUser.setActive(1L);
 			// LOG.debug(xUser);
 			XUserService service = new XUserServiceImpl();
-			service.createOrUpdate(xUser);
+			service.create(xUser);
 
 			request.setAttribute("msg", "Registration Completed, ");
 
