@@ -52,7 +52,9 @@
 				href="${pageContext.request.contextPath}/profile?email=${user.email}">Change
 					Profile</a></li>
 			<li><a href="${pageContext.request.contextPath}/sign-out">Logout</a></li>
-			<li><a href="#">Change Display Picture</a></li>
+			<li><a
+				href="${pageContext.request.contextPath}/profile?email=${user.email}">Change
+					Display Picture</a></li>
 			<li><a href="#">Request Admin for Something</a></li>
 		</ul>
 	</div>
@@ -70,7 +72,9 @@
 					src="${pageContext.request.contextPath}/userImage?email=${user.email}"
 					height="100px" width="100px">
 				<li class="sr-only">break</li>
-				<li><i class="btn-link">Change Picture</i></li>
+				<li><i><a
+						href="${pageContext.request.contextPath}/profile?email=${user.email}"
+						class="btn-link">Change Picture</a></i></li>
 			</ul>
 		</li>
 		<li class="sr-only">break</li>
