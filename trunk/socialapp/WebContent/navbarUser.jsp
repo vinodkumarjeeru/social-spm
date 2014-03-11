@@ -48,7 +48,9 @@
 
 	<div id="newNavbarcollapse" class="collapse">
 		<ul class="list-unstyled nav navbar-nav">
-			<li><a href="#">Change Profile</a></li>
+			<li><a
+				href="${pageContext.request.contextPath}/profile?email=${user.email}">Change
+					Profile</a></li>
 			<li><a href="${pageContext.request.contextPath}/sign-out">Logout</a></li>
 			<li><a href="#">Change Display Picture</a></li>
 			<li><a href="#">Request Admin for Something</a></li>
@@ -79,7 +81,9 @@
 		<li class="sr-only">break</li>
 		<li class="pull-right">
 			<ul class="nav nav-stacked list-unstyled ">
-				<li><b class="btn btn-primary">Change Profile</b></li>
+				<li><b> <a
+						href="${pageContext.request.contextPath}/profile?email=${user.email}"
+						class="btn btn-primary"> Change Profile</a></b></li>
 				<li class="sr-only">break</li>
 				<li class="sr-only">break</li>
 				<li><b class="btn btn-primary">Request Admin</b></li>
