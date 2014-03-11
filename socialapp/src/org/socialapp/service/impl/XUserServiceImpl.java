@@ -16,7 +16,7 @@ public class XUserServiceImpl implements XUserService {
 	private XUserDAO xUserDAO = new XUserDAOImpl();
 
 	@Override
-	public void createOrUpdate(XUser xUser) {
+	public void create(XUser xUser) {
 
 		try {
 			HibernateUtils.beginTransaction();
@@ -89,6 +89,18 @@ public class XUserServiceImpl implements XUserService {
 			LOG.debug("", exception);
 		}
 		return password;
+	}
+
+	@Override
+	public void update(XUser xUser) {
+		try {
+			HibernateUtils.beginTransaction();
+			xUserDAO.merge(xUser);
+			HibernateUtils.commitTransaction();
+		} catch (Exception exception) {
+			LOG.warn("", exception);
+		}
+		
 	}
 
 }
