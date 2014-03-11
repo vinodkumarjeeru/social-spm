@@ -1,6 +1,7 @@
 package org.socialapp.web.controller;
 
 import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +28,10 @@ public class ChangeProfileController extends RootServlet {
 		XUserService service = new XUserServiceImpl();
 		XUser user = service.findBy(email);
 		LOG.debug(user.getEmail());
+                
+                request.setAttribute("user",user);
+               RequestDispatcher dispatcher = request.getRequestDispatcher("/userProfile.jsp");
+               dispatcher.forward(request, response);
 
 	}
 }
