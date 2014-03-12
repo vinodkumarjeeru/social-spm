@@ -23,6 +23,7 @@ public class ChangeProfileController extends RootServlet {
 
 	public void socialService(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		boolean error = false;
 		String action = request.getParameter("action");
 		LOG.debug(action);
 		XUserService service = new XUserServiceImpl();
@@ -42,28 +43,54 @@ public class ChangeProfileController extends RootServlet {
 		if ("update".equalsIgnoreCase(action)) {
 			String firstName = request.getParameter("firstName").trim();
 			String lastName = request.getParameter("lastName").trim();
-			LOG.debug(firstName);
-			LOG.debug(lastName);
 			String userEmail = request.getParameter("email1").trim();
-			LOG.debug(userEmail);
 			XUser user = service.findBy(userEmail);
-			LOG.debug(user.getFirstName());
-			LOG.debug(user.getLastName());
-			LOG.debug(user.getEmail());
-			LOG.debug(user.getId());
-			LOG.debug(user.getDistrict());
-			LOG.debug(user.getCreatedBy());
-			LOG.debug(user.getCreatedOn());
-			LOG.debug(user.getActive());
-
 			String district = request.getParameter("district").trim();
 			String mobile = request.getParameter("mobile").trim();
 			String secQuestion = request.getParameter("securityQuestion")
 					.trim();
 			String answer = request.getParameter("answer").trim();
 
-			XUser xUser = new XUser();
+			if (firstName == null || firstName.length() == 0) {
+				request.setAttribute("firstNameError", "Firstname Required");
+				error = true;
 
+			}
+			if (lastName == null || lastName.length() == 0) {
+				request.setAttribute("lastNameError", "Lastname Required");
+				error = true;
+
+			}
+			if (district == null || district.length() == 0) {
+				request.setAttribute("districtError", "District Name Required");
+				error = true;
+
+			}
+			if (mobile == null || mobile.length() == 0) {
+				request.setAttribute("mobileError", "Mobile Number Required");
+				error = true;
+
+			}
+			if (secQuestion.equalsIgnoreCase("Security Question")) {
+				request.setAttribute("secQuestionError",
+						"SecurityQuestion Required");
+				error = true;
+
+			}
+			if (answer == null || answer.length() == 0) {
+				request.setAttribute("answerError", "Answer Required");
+				error = true;
+
+			}
+
+			if (error) {
+				RequestDispatcher dispatcher = request
+						.getRequestDispatcher("/userProfile.jsp");
+				dispatcher.forward(request, response);
+				return;
+			}
+
+			XUser xUser = new XUser();
 			xUser.setId(user.getId());
 			xUser.setGuid(user.getGuid());
 
@@ -88,6 +115,11 @@ public class ChangeProfileController extends RootServlet {
 			LOG.debug(xUser.getEmail());
 
 			service.update(xUser);
+			request.setAttribute("updateMessage",
+					"Your Profile Successfully Updated.");
+			RequestDispatcher dispatcher = request
+					.getRequestDispatcher("/userProfile.jsp");
+			dispatcher.forward(request, response);
 			return;
 		}
 
