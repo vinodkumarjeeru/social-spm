@@ -61,9 +61,20 @@
 					action="${pageContext.request.contextPath}/profile">
 					<div class="form-group pull-left">
 						<label>First Name </label> <input type="text" class="form-control"
-							id="fname" name="firstName" value="${user.firstName}"> <label>Last
-							Name</label> <input type="text" class="form-control" id="lname"
-							name="lastName" value="${user.lastName }">
+							id="fname" name="firstName" value="${user.firstName}">
+						<c:if test="${not empty firstNameError }">
+							<h6>
+								<font color="red"><c:out value="${firstNameError }" /></font>
+							</h6>
+						</c:if>
+
+						<label>Last Name</label> <input type="text" class="form-control"
+							id="lname" name="lastName" value="${user.lastName }">
+						<c:if test="${not empty lastNameError }">
+							<h6>
+								<font color="red"><c:out value="${lastNameError }" /></font>
+							</h6>
+						</c:if>
 
 
 					</div>
@@ -107,6 +118,11 @@
 						<option value="YSR Kadapa"></option>
 
 					</datalist>
+					<c:if test="${not empty districtError }">
+						<h6>
+							<font color="red"><c:out value="${districtError }" /></font>
+						</h6>
+					</c:if>
 
 
 				</div>
@@ -114,6 +130,11 @@
 					<label>Your Phone Number </label> <input type="tel"
 						class="form-control" name="mobile" value="${user.mobile}"
 						id="mobile">
+					<c:if test="${not empty mobileError }">
+						<h6>
+							<font color="red"><c:out value="${mobileError }" /></font>
+						</h6>
+					</c:if>
 
 				</div>
 				<div class="form-group">
@@ -131,14 +152,22 @@
 						<option>In what year was your father born?</option>
 
 					</select>
-
+					<c:if test="${not empty secQuestionError }">
+						<h6>
+							<font color="red"><c:out value="${secQuestionError }" /></font>
+						</h6>
+					</c:if>
 
 				</div>
 				<div class="form-group">
 					<label>Answer</label> <input type="text" class="form-control"
 						name="answer" value="${user.answer}" id="answer">
 
-
+					<c:if test="${not empty answerError }">
+						<h6>
+							<font color="red"><c:out value="${answerError }" /></font>
+						</h6>
+					</c:if>
 				</div>
 
 
@@ -146,6 +175,11 @@
 					<input type="submit" class="btn btn-success" value="Update"
 						name="action">
 					<button type="button" class="btn btn-danger">Reset</button>
+					<c:if test="${not empty updateMessage }">
+						<h4 class="text-muted">
+							<c:out value="${updateMessage }" />
+						</h4>
+					</c:if>
 
 				</div>
 				</form>
