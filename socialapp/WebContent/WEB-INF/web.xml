@@ -120,8 +120,18 @@
 		<servlet-class>org.socialapp.web.controller.ChangeProfileController</servlet-class>
 	</servlet>
 	<servlet-mapping>
-	    <servlet-name>ChangeProfileController</servlet-name>
-	    <url-pattern>/profile</url-pattern>
+		<servlet-name>ChangeProfileController</servlet-name>
+		<url-pattern>/profile</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ChangePasswordController</servlet-name>
+		<servlet-class>org.socialapp.web.controller.ChangePasswordController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChangePasswordController</servlet-name>
+		<url-pattern>/changePassword</url-pattern>
+
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
