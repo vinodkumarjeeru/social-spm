@@ -6,9 +6,11 @@
 			<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 				class="icon-bar"></span>
 		</button>
-		<img src="images/MaleImg.jpg" class="img-circle navbar-toggle"
-			height="45px" width="45px" data-toggle="collapse"
-			class="navbar-toggle" data-target="#newNavbarcollapse">
+		<img
+			src="${pageContext.request.contextPath}/userImage?email=${user.email}"
+			class="img-circle navbar-toggle" height="45px" width="45px"
+			data-toggle="collapse" class="navbar-toggle"
+			data-target="#newNavbarcollapse">
 
 
 
@@ -91,9 +93,9 @@
 						class="btn btn-primary"> Change Profile</a></b></li>
 				<li class="sr-only">break</li>
 				<li class="sr-only">break</li>
-				<li><b class="btn btn-primary"> <a
-						href="${pageContext.request.contextPath}/changePassword?action=view">Change
-							Password</a></b></li>
+				<li><b> <a
+						href="${pageContext.request.contextPath}/changePassword?action=view"
+						class="btn btn-primary">Change Password</a></b></li>
 				<li class="sr-only">break</li>
 				<li class="sr-only">break</li>
 				<li><b><a
