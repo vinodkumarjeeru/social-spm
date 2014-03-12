@@ -31,9 +31,8 @@
 		</ul>
 		<div class="pull-right collapse navbar-collapse"
 			style="width: max-content">
-			<span class="navbar-brand text-center"><strong>
-					<c:out value="${user.firstName}" /> <c:out
-						value="${user.lastName}" />
+			<span class="navbar-brand text-center"><strong> <c:out
+						value="${user.firstName}" /> <c:out value="${user.lastName}" />
 			</strong></span> <span class="pull-right text-center"
 				style="position: relative; top: 5px; left: -10px;"><b><img
 					src="${pageContext.request.contextPath}/userImage?email=${user.email}"
@@ -55,7 +54,9 @@
 			<li><a
 				href="${pageContext.request.contextPath}/profile?email=${user.email}">Change
 					Display Picture</a></li>
-			<li><a href="#">Request Admin for Something</a></li>
+			<li><a
+				href="${pageContext.request.contextPath}/changePassword?action=view">Change
+					Password</a></li>
 		</ul>
 	</div>
 
@@ -90,7 +91,9 @@
 						class="btn btn-primary"> Change Profile</a></b></li>
 				<li class="sr-only">break</li>
 				<li class="sr-only">break</li>
-				<li><b class="btn btn-primary">Request Admin</b></li>
+				<li><b class="btn btn-primary"> <a
+						href="${pageContext.request.contextPath}/changePassword?action=view">Change
+							Password</a></b></li>
 				<li class="sr-only">break</li>
 				<li class="sr-only">break</li>
 				<li><b><a
