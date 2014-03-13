@@ -8,9 +8,34 @@
 		<param-name>log4j-config</param-name>
 		<param-value>classpath:log4j.xml</param-value>
 	</context-param>
+        
+        <context-param>            
+            <param-name>appName</param-name>
+            <param-value>InfoHub</param-value>            
+        </context-param>
+        
+        
+        
+        
 	<listener>
 		<listener-class>org.socialapp.web.utils.AppContextListener</listener-class>
 	</listener>
+        
+        
+        <filter>
+            <filter-name>SecurityFilter</filter-name>
+            <filter-class>org.soacialapp.web.security.SecurityFilter</filter-class>
+            
+            
+        </filter>
+        
+        
+        
+        <filter-mapping>
+            <filter-name>SecurityFilter</filter-name>
+            <url-pattern>/*</url-pattern>
+            
+        </filter-mapping>
 	<servlet>
 		<servlet-name>FBLoginController</servlet-name>
 		<servlet-class>org.socialapp.web.controller.FBLoginController</servlet-class>
