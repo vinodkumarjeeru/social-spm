@@ -21,7 +21,7 @@
         <%@include file="navbarUser.jsp"%>
         <div class="container">
             <div class="jumbotron">
-                <div class="panel panel-primary">
+                <div class="panel panel-primary" id="Pan" style="z-index:0">
                     <div class="panel-heading">
                         <div class="text-center panel-title">
                             <strong>Change Your Password</strong>
@@ -31,7 +31,7 @@
                         <form class="" action="${pageContext.request.contextPath}/changePassword" method="post">
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" class="form-control" name="email">
+                                <input type="email" class="form-control" name="email" value="${user.email }" readonly="readonly">
                                 <c:if test="${not empty emailError }">
 							<h6>
 								<font color="red"><c:out value="${emailError }" /></font>
@@ -41,6 +41,11 @@
                             <div class="form-group">
                                 <label>Current Password</label>
                                 <input type="password" class="form-control" name="currentPassword">
+                                <c:if test="${not empty invalidDetails }">
+							<h6>
+								<font color="red"><c:out value="${invalidDetails }" /></font>
+							</h6>
+						</c:if>
                                 <c:if test="${not empty currentPasswordError }">
 							<h6>
 								<font color="red"><c:out value="${currentPasswordError }" /></font>
