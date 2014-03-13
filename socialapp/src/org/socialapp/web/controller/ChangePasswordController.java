@@ -40,8 +40,8 @@ public class ChangePasswordController extends RootServlet {
 			XUser xUser = xUserService.findBy(user.getEmail());
 			String email = request.getParameter("email");
 			String currentPassword = request.getParameter("currentPassword");
-			String newPassword = request.getParameter("newPassword");
 
+			String newPassword = request.getParameter("newPassword");
 			if (email == null || email.length() == 0) {
 				request.setAttribute("emailError", "Email Required!");
 				error = true;
@@ -57,6 +57,14 @@ public class ChangePasswordController extends RootServlet {
 				error = true;
 			}
 			if (error) {
+				RequestDispatcher dispatcher = request
+						.getRequestDispatcher("/changePassword.jsp");
+				dispatcher.forward(request, response);
+				return;
+			}
+			if (!xUser.getPassword().equals(currentPassword)) {
+				request.setAttribute("invalidDetails",
+						"Please Enter correct password!");
 				RequestDispatcher dispatcher = request
 						.getRequestDispatcher("/changePassword.jsp");
 				dispatcher.forward(request, response);
