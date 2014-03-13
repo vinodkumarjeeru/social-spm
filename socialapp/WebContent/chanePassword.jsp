@@ -12,6 +12,7 @@
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="images/MaleImg.jpg">
         <link rel="stylesheet" href="css/socialapp.css"
               <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
