@@ -1,6 +1,6 @@
 <nav class="navbar navbar-fixed-top navbar-default navbar-inverse">
 	<div class="navbar-header">
-		<a href="#" class="navbar-brand" id="BrandName"> InfoHub </a>
+            <a href="#" class="navbar-brand" id="BrandName"><%=this.getServletContext().getInitParameter("appName")%></a>
 		<button type="button" class="navbar-toggle" data-target="#LoggIn">
 			<a href="#myModal" data-toggle="modal"
 				class="btn-sm btn-success text-success" id="LogIn">Log In</a>
