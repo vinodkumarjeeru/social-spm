@@ -8,6 +8,7 @@
 <script src="js/social.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="images/active_404.png">
 <title>Forgot Password</title>
 <style type="text/css">
