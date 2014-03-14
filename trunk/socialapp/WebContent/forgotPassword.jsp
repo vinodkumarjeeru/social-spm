@@ -23,7 +23,7 @@
 
 	<nav class="navbar navbar-fixed-top navbar-default navbar-inverse">
 		<div class="navbar-header">
-			<a href="#" class="navbar-brand">Infohub</a>
+			<a href="#" class="navbar-brand"><%=this.getServletContext().getInitParameter("appName")%></a>
 		</div>
 		<ul class="pull-right navbar-brand list-unstyled">
 			<li><a href="index.jsp" class="text-success btn btn-success">Home</a></li>
