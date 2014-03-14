@@ -1,3 +1,11 @@
+/* 
+    Document   : socailapp1
+    Created on : 13 Mar, 2014, 1:58:47 PM
+    Author     : Admin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
 #LogIn {
     font-weight: bolder;
 
@@ -11,9 +19,7 @@
 
 
 
-body {
-    padding: 60px;
-}
+
 
 #Login_Heading {
     font-weight: bolder;
