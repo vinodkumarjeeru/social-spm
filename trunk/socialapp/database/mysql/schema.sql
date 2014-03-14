@@ -65,3 +65,26 @@ create table spm_xuser (
    PRIMARY KEY (xsr_id)
 ) ENGINE = InnoDB DEFAULT CHARSET=UTF8 COLLATE=UTF8_UNICODE_CI;
 
+create table spm_fbuser (
+   fb_id 				bigint(10) not null auto_increment,   
+   fb_guid 				varchar(255) not null,
+   fb_email				varchar(255),
+   fb_fbid    			varchar(255),
+   fb_userName			varchar(255),
+   fb_firstname 		varchar(255) ,
+   fb_lastname 		    varchar(255),
+   fb_gender			varchar(255),
+   fb_password 		    varchar(255),
+   fb_district 		    varchar(255), 
+   fb_mobile 		    varchar(255),
+   fb_question 		    varchar(255),
+   fb_answer 		    varchar(255), 
+   fb_profilepic 		mediumblob,
+   fb_created_on 	    datetime not null,
+   fb_created_by 		bigint(10),
+   fb_modified_on 	    datetime not null,
+   fb_modified_by 		bigint(10),
+   fb_active 			bigint(10) not null,  
+   PRIMARY KEY (fb_id)
+) ENGINE = InnoDB DEFAULT CHARSET=UTF8 COLLATE=UTF8_UNICODE_CI;
+
