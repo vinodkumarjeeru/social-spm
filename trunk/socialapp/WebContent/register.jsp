@@ -61,7 +61,8 @@
 								id="fname" name="firstName" value="${param.firstName}">
 							<c:if test="${not empty firstNameError}">
 								<h6>
-									<font color="red"><c:out value="${firstNameError }" /> </font>
+									<font color="red"><c:out value="${firstNameError }" />
+									</font>
 								</h6>
 							</c:if>
 							<input type="text" class="form-control" placeholder="Last Name"
@@ -77,6 +78,11 @@
 					<div class="form-group">
 						<label> E-mail </label> <input type="email" class="form-control"
 							name="email" placeholder="E-Mail" id="email">
+						<c:if test="${not empty emailExistError}">
+							<h6>
+								<font color="red"><c:out value="${emailExistError}" /></font>
+							</h6>
+						</c:if>
 						<c:if test="${not empty mailIdError}">
 							<h6>
 								<font color="red"><c:out value="${mailIdError }"></c:out>
