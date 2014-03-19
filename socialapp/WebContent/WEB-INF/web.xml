@@ -24,7 +24,7 @@
         
         <filter>
             <filter-name>SecurityFilter</filter-name>
-            <filter-class>org.soacialapp.web.security.SecurityFilter</filter-class>
+            <filter-class>org.socialapp.web.security.SecurityFilter</filter-class>
             
             
         </filter>
