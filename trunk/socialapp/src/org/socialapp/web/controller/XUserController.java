@@ -128,6 +128,16 @@ public class XUserController extends RootServlet {
 				dispatcher.forward(request, response);
 				return;
 			}
+			XUserService service = new XUserServiceImpl();
+			XUser user = service.findBy(mailId);
+			if (user != null) {
+				request.setAttribute("emailExistError",
+						"E-Mail Alreay Registered, Please Choose Different E-Mail Id.");
+				RequestDispatcher dispatcher = request
+						.getRequestDispatcher("/register.jsp");
+				dispatcher.forward(request, response);
+				return;
+			}
 
 			XUser xUser = new XUser();
 			// xUser.setFbId(1L);
@@ -146,7 +156,7 @@ public class XUserController extends RootServlet {
 			xUser.setModifiedOn(new java.util.Date());
 			xUser.setActive(1L);
 			// LOG.debug(xUser);
-			XUserService service = new XUserServiceImpl();
+
 			service.create(xUser);
 
 			request.setAttribute("msg", "Registration Completed, ");
@@ -159,5 +169,4 @@ public class XUserController extends RootServlet {
 			LOG.debug(e);
 		}
 	}
-
 }
