@@ -10,17 +10,12 @@
 		</id>
 
 		<property column="fb_guid" name="guid" type="java.lang.String" />
-		<property column="fb_email" name="email" type="java.lang.String" />
-		<property column="fb_password" name="password" type="java.lang.String" />
+		<property column="fb_fbid" name="fbId" type="java.lang.String" />
 		<property column="fb_firstname" name="firstName" type="java.lang.String" />
 		<property column="fb_username" name="userName" type="java.lang.String" />
 		<property column="fb_gender" name="gender" type="java.lang.String" />
 		<property column="fb_lastname" name="lastName" type="java.lang.String" />
-		<property column="fb_question" name="securityQuestion" type="java.lang.String" />
-		<property column="fb_answer" name="answer" type="java.lang.String" />
-		<property column="fb_mobile" name="mobile" type="java.lang.String" />
 		<property column="fb_district" name="district" type="java.lang.String" />
-		<property column="fb_profilepic" name="profilePic" type="binary" />
 		<property column="fb_created_on" name="createdOn" type="java.util.Date" />
 		<property column="fb_created_by" name="createdBy" type="java.lang.Long" />
 		<property column="fb_modified_on" name="modifiedOn" type="java.util.Date" />
