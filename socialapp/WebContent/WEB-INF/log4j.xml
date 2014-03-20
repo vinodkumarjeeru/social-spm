@@ -19,7 +19,7 @@
 		</layout>
 	</appender>
 
-	<logger name="org">
+	<logger name="org.socialapp">
 		<level value="DEBUG" />
 		<appender-ref ref="stdout" />
 		<appender-ref ref="fileout" />
