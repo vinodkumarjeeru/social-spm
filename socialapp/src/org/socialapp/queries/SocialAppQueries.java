@@ -10,6 +10,6 @@ public interface SocialAppQueries {
 
 	public static final String XUSER_FIND_BY_EMAIL = "from XUser xUser where xUser.email=:email";
 
-	public static final String FBUSER_FIND_BY_FBID = "from FBUser fbUser wher fbUser.fbId=:fbId";
+	public static final String FBUSER_FIND_BY_FBID = "from FBUser fbUser where fbUser.fbId=:fbId";
 
 }
