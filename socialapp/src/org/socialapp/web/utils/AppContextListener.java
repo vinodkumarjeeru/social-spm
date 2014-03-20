@@ -19,6 +19,8 @@ public class AppContextListener implements ServletContextListener{
 	@Override
 	public void contextInitialized(ServletContextEvent ctxEvent) {		
 		
+		
+		
 		ServletContext ctx = ctxEvent.getServletContext();
 		 String log4jConfig = ctx.getInitParameter("log4j-config");
 	        if(log4jConfig == null){
@@ -28,10 +30,14 @@ public class AppContextListener implements ServletContextListener{
 	            String log4jProp = webAppPath + log4jConfig;
 	            
 	            File log4jConfigFile = new File(log4jProp);
+	            
+	            System.out.println("====================="+log4jConfigFile.getAbsolutePath());
 	            if (log4jConfigFile.exists()) {
 	                DOMConfigurator.configure(log4jProp);
+	                
 	            } else {
 	                BasicConfigurator.configure();
+	                
 	            }
 	        }
 	}
