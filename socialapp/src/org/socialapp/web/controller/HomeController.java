@@ -18,6 +18,8 @@ import org.scribe.model.Verb;
 import org.scribe.model.Verifier;
 import org.scribe.oauth.OAuthService;
 import org.socialapp.domain.sub.FBUser;
+import org.socialapp.service.FBUserService;
+import org.socialapp.service.impl.FBUserServiceImpl;
 import org.socialapp.web.utils.RootServlet;
 
 public class HomeController extends RootServlet {
@@ -65,31 +67,37 @@ public class HomeController extends RootServlet {
 				jsonObject = new JSONObject(oAuthResponse.getBody());
 				LOG.debug("\n======" + jsonObject.toString());
 				LOG.debug("\n\n");
-				LOG.debug("ID :  "+jsonObject.getString("id"));
-				LOG.debug("User Name :  "+jsonObject.getString("username"));
-				LOG.debug("First Name :  "+jsonObject.getString("first_name"));
-				LOG.debug("Last Name :  "+jsonObject.getString("last_name"));
-				
-				LOG.debug("Location : "+jsonObject.getString("location"));
-				LOG.debug("Gender : "+jsonObject.getString("gender"));
-				
+				LOG.debug("ID :  " + jsonObject.getString("id"));
+				//LOG.debug("User Name :  " + jsonObject.getString("username"));
+				LOG.debug("First Name :  " + jsonObject.getString("first_name"));
+				LOG.debug("Last Name :  " + jsonObject.getString("last_name"));
+
+				LOG.debug("Location : " + jsonObject.getString("location"));
+				LOG.debug("Gender : " + jsonObject.getString("gender"));
+
 				userName = jsonObject.getString("username");
-				String fbId  = jsonObject.getString("id");
-				
-				/*FBUser fbUser = new FBUser();
-				fbUser.setFbId(jsonObject.getString("id"));
-				fbUser.setFirstName(jsonObject.getString("first_name"));
-				fbUser.setLastName(jsonObject.getString("last_name"));
-				fbUser.setGender(jsonObject.getString("gender"));
-				fbUser.setUserName(jsonObject.getString("username"));*/
+				String fbId = jsonObject.getString("id");
+				FBUserService service = new FBUserServiceImpl();
+				FBUser fbUser = service.findByFbId(fbId);
+				if (fbUser == null) {
+					LOG.debug("User Not Avaliable");
+					return;
+				}
+				LOG.debug("User Avaliable");
+				/*
+				 * FBUser fbUser = new FBUser();
+				 * fbUser.setFbId(jsonObject.getString("id"));
+				 * fbUser.setFirstName(jsonObject.getString("first_name"));
+				 * fbUser.setLastName(jsonObject.getString("last_name"));
+				 * fbUser.setGender(jsonObject.getString("gender"));
+				 * fbUser.setUserName(jsonObject.getString("username"));
+				 */
 
 			} catch (JSONException e) {
 				LOG.warn("", e);
 			}
 
 		}
-		
-		
 
 		if ("admin.spm.3".equals(userName)) {
 			response.sendRedirect("adminHome.jsp");
