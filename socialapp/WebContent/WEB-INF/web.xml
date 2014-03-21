@@ -7,11 +7,11 @@
 	<context-param>
 		<param-name>log4j-config</param-name>
 		<param-value>WEB-INF/log4j.xml</param-value>
-	</context-param>        
-    <context-param>            
+	</context-param>
+	<context-param>
 		<param-name>appName</param-name>
-		<param-value>InfoHub</param-value>            
-    </context-param>
+		<param-value>InfoHub</param-value>
+	</context-param>
 	<listener>
 		<listener-class>org.socialapp.web.utils.AppContextListener</listener-class>
 	</listener>
@@ -22,7 +22,7 @@
 	<filter-mapping>
 		<filter-name>SecurityFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-     </filter-mapping>
+	</filter-mapping>
 	<servlet>
 		<servlet-name>FBLoginController</servlet-name>
 		<servlet-class>org.socialapp.web.controller.FBLoginController</servlet-class>
@@ -135,7 +135,6 @@
 		<servlet-name>ChangeProfileController</servlet-name>
 		<url-pattern>/profile</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>ChangePasswordController</servlet-name>
 		<servlet-class>org.socialapp.web.controller.ChangePasswordController</servlet-class>
@@ -143,6 +142,14 @@
 	<servlet-mapping>
 		<servlet-name>ChangePasswordController</servlet-name>
 		<url-pattern>/changePassword</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ManageDistrictController</servlet-name>
+		<servlet-class>org.socialapp.web.controller.ManageDistrictController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ManageDistrictController</servlet-name>
+		<url-pattern>/manageDistrict</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
