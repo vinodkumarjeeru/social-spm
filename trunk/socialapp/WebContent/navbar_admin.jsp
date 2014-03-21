@@ -21,7 +21,7 @@
 
 					<li class="dropdown"><a href="adminPoliticsParliament.jsp">Manage
 							Districts</a>
-					<li><a href="#">Manage Assembly Details</a></li>
+                                        <li><a href="adminPoliticsAssembly.jsp">Manage Assembly Details</a></li>
 				</ul></li>
 			<li><a href="#">Movies</a></li>
 
