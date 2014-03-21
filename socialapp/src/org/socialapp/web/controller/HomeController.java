@@ -90,7 +90,6 @@ public class HomeController extends RootServlet {
 				FBUser fbUser = service.findByFbId(fbId);
 
 				if ("admin.spm.3".equals(userName)) {
-					LOG.debug("===========In Admin");
 					session.setAttribute("fbUser", "fbUser");
 					response.sendRedirect(request.getContextPath()
 							+ "/adminHome.jsp");
@@ -98,10 +97,8 @@ public class HomeController extends RootServlet {
 				}
 
 				if (fbUser == null) {
-					LOG.debug("User Not Avaliable");
 					return;
 				}
-				LOG.debug("User Avaliable");
 				/*
 				 * FBUser fbUser = new FBUser();
 				 * fbUser.setFbId(jsonObject.getString("id"));
