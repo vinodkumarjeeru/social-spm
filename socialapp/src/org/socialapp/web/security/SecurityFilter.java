@@ -30,13 +30,11 @@ public class SecurityFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse res,
 			FilterChain chain) throws IOException, ServletException {
-
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
 
 		String uri = request.getRequestURI();
 
-		LOG.debug("====================" + uri);
 
 		if (uri.equalsIgnoreCase(request.getContextPath() + "/userHome.jsp")) {
 			XUser user = (XUser) request.getSession().getAttribute("user");
@@ -51,10 +49,8 @@ public class SecurityFilter implements Filter {
 			String fbUser = (String) request.getSession()
 					.getAttribute("fbUser");
 
-			LOG.debug("===================" + fbUser);
 
 			if (fbUser == null) {
-				LOG.debug("========================in Filter");
 				response.sendRedirect("index.jsp");
 				return;
 			}
