@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.json.JSONException;
@@ -28,7 +29,7 @@ public class HomeController extends RootServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static final Logger LOG = Logger.getLogger(FBLoginController.class);
+	private static final Logger LOG = Logger.getLogger(HomeController.class);
 
 	private static final String PROTECTED_RESOURCE_URL = "https://graph.facebook.com/me";
 	private static final Token EMPTY_TOKEN = null;
@@ -50,8 +51,8 @@ public class HomeController extends RootServlet {
 				.apiKey(apiKey).apiSecret(apiSecret).callback(callback).build();
 
 		JSONObject jsonObject = null;
-
 		String userName = null;
+		HttpSession session = request.getSession();
 
 		if (request.getParameter("code") != null) {
 			verifier = new Verifier(request.getParameter("code"));
@@ -65,20 +66,37 @@ public class HomeController extends RootServlet {
 
 			try {
 				jsonObject = new JSONObject(oAuthResponse.getBody());
-				LOG.debug("\n======" + jsonObject.toString());
-				LOG.debug("\n\n");
-				LOG.debug("ID :  " + jsonObject.getString("id"));
-				//LOG.debug("User Name :  " + jsonObject.getString("username"));
-				LOG.debug("First Name :  " + jsonObject.getString("first_name"));
-				LOG.debug("Last Name :  " + jsonObject.getString("last_name"));
 
-				LOG.debug("Location : " + jsonObject.getString("location"));
-				LOG.debug("Gender : " + jsonObject.getString("gender"));
-
-				userName = jsonObject.getString("username");
 				String fbId = jsonObject.getString("id");
+				userName = jsonObject.getString("username");
+
+				// LOG.debug("\n======" + jsonObject.toString() + "\n\n");
+				// LOG.debug("\n\n===============================\n");
+				// LOG.debug("ID :  " + jsonObject.getString("id"));
+				// LOG.debug("User Name :  " +
+				// jsonObject.getString("username"));
+				// LOG.debug("First Name :  " +
+				// jsonObject.getString("first_name"));
+				// LOG.debug("Last Name :  " +
+				// jsonObject.getString("last_name"));
+				// LOG.debug("Location : " + jsonObject.getString("location"));
+				// LOG.debug("Gender : " + jsonObject.getString("gender"));
+				// LOG.debug("================================================\n\n");
+				//
+				// LOG.debug("=================Using Object ============"
+				// + jsonObject.get("username"));
+
 				FBUserService service = new FBUserServiceImpl();
 				FBUser fbUser = service.findByFbId(fbId);
+
+				if ("admin.spm.3".equals(userName)) {
+					LOG.debug("===========In Admin");
+					session.setAttribute("fbUser", "fbUser");
+					response.sendRedirect(request.getContextPath()
+							+ "/adminHome.jsp");
+					return;
+				}
+
 				if (fbUser == null) {
 					LOG.debug("User Not Avaliable");
 					return;
@@ -99,12 +117,7 @@ public class HomeController extends RootServlet {
 
 		}
 
-		if ("admin.spm.3".equals(userName)) {
-			response.sendRedirect("adminHome.jsp");
-			return;
-		}
 		response.sendRedirect("userHome.jsp");
 
 	}
-
 }
