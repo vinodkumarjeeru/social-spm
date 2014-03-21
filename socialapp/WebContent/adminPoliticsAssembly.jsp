@@ -24,7 +24,7 @@
                 <div class="bg-info" style="width: fit-content;">
                     <ul class="nav nav-pills">
                         <li><a href="createAssembly.jsp">Create</a></li>
-                        <li><a href="#">List</a></li>
+                        <li><a href="manageAssembly.jsp">List</a></li>
                     </ul>
                 </div>
 
