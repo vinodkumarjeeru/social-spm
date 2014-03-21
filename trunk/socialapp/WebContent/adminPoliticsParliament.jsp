@@ -24,7 +24,6 @@
                 <div class="bg-info" style="width: fit-content;">
                     <ul class="nav nav-pills">
                         <li><a href="adminPolitparliCreate.jsp">Create</a></li>
-                        <li><a href="#">Update</a></li>
                         <li><a href="#">List</a></li>
                     </ul>
                 </div>
